@@ -1,0 +1,62 @@
+body {
+    --glavna-boja-jako: #e54304;
+    --glavna-boja-srednje: #f47100;
+    --glavna-boja-slabo: #ff9e22;
+    --sekundarna-boja-jako: #ffaf49;
+    --sekundarna-boja-srednje: #ffddb0;
+    --sekundarna-boja-slabo: #fff2df;
+    font-family: 'Times New Roman';
+    display: flex;
+    height: 100vw;
+}
+
+.maksimalna-širina {
+    width: 100%;
+}
+
+.maksimalna-visina {
+    height: 100%;
+}
+
+.redak {
+    display: flex;
+}
+
+.stupac {
+    display: flex;
+    flex-direction: column;
+}
+
+.zaglavlje {
+    background-color: var(--glavna-boja-jako);
+    color: white;
+    font-family: 'Franklin Gothic Medium';
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.navigacija {
+    border: 2px solid white;
+    background-color: var(--glavna-boja-srednje);
+    width: 150px;
+}
+
+.navigacija a {
+    color: black;
+    text-decoration: none
+}
+
+.navigacija a:hover {
+    color: blue;
+    font-weight: bolder;
+}
+
+.tijelo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.podnožje {
+    background-color: var(--glavna-boja-slabo);
+}
