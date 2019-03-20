@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <title>Hrvatske Crkve</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="dizajn.css" />
+  </head>
+  <body>
+    <div class="stupac maksimalna-širina">
+      <div class="zaglavlje redak">
+        <a href="./index.html" class="naslovna">
+          <img src="" alt="Naslovna slika." />
+        </a>
+        <h4>Crkve Hrvatske</h4>
+      </div>
+      <div class="redak maksimalna-visina">
+        <div class="navigacija">
+          <ul>
+            <li>
+              <a href="./index.html">Početna</a>
+            </li>
+            <li>
+              <a href="./obrazac.html">Pretraživanje</a>
+            </li>
+            <li>
+              <a href="http://www.fer.unizg.hr/predmet/or"
+                >Otvoreno Računarstvo</a
+              >
+            </li>
+            <li>
+              <a href="http://www.fer.unizg.hr/" target="_blank">FER</a>
+            </li>
+            <li>
+              <a href="mailto:antonio.kamber@fer.hr">Email</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stupac maksimalna-širina">
+          <div class="tijelo">
+            <header><h2>Pretražite</h2></header>
+            <div class="redak obrazac maksimalna-širina elementi-sredina">
+              <form>
+                <table class="tablica-obrazac">
+                  <tr>
+                    <td>Naziv crkve:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="npr. Zagrebačka katedrala"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="pozadina-boja">
+                    <td colspan="2">Adresa</td>
+                  </tr>
+                  <tr class="pozadina-boja">
+                    <td>Mjesto:</td>
+                    <td><input type="text" placeholder="npr. Zagreb" /></td>
+                  </tr>
+                  <tr class="pozadina-boja">
+                    <td>Poštanski broj:</td>
+                    <td><input type="text" placeholder="npr. 10000" /></td>
+                  </tr>
+                  <tr class="pozadina-boja">
+                    <td>Ulica, broj:</td>
+                    <td><input type="text" placeholder="npr. Kaptol 31" /></td>
+                  </tr>
+                  <tr class="prozirno">
+                    <td colspan="2">Župni ured</td>
+                  </tr>
+                  <tr class="prozirno">
+                    <td>Adresa elektroničke pošte:</td>
+                    <td>
+                      <input
+                        type="email"
+                        placeholder="katedrala.zagreb@crkve.hr"
+                      />
+                    </td>
+                  </tr>
+                  <tr class="prozirno">
+                    <td colspan="2" class="nema-vrijednost">Telefon župnog ureda</td>
+                  </tr>
+                  <tr class="prozirno">
+                    <td>Tip:</td>
+                    <td>
+                      <form>
+                        <input type="radio" value="mobilni"/>mobilni<br/>
+                        <input type="radio" value="fiksni"/>fiksni<br/>
+                        <input type="radio" value="telefaks"/>telefaks
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="prozirno">
+                      <td>Pozivni broj mreže:</td>
+                      <td><select>
+                          <option value="098">098</option>
+                          <option value="099">099</option>
+                          <option value="095">095</option>
+                          <option value="092">092</option>
+                          <option value="01" selected>01</option>
+                      </select></td>
+                  </tr>
+                  <tr class="prozirno">
+                      <td>Broj:</td>
+                      <td><input type="number" placeholder="1231231"></td>
+                  </tr>
+                  <tr>
+                        <td>Godina osnutka:</td>
+                        <td>
+                          <input type="number" placeholder="npr. 2005" min="1500" />
+                        </td>
+                      </tr>
+                      <tr>
+                          <td>Aktivnosti:</td>
+                          <td><select multiple>
+                                <option value="vjeronauk">vjeronauk</option>
+                                <option value="caritas">caritas</option>
+                                <option value="zaruke">zaruke</option>
+                                <option value="ministriranje">ministriranje</option>
+                            </select></td>
+                      </tr>
+                      <tr>
+                          <td>Ispovijedi:</td>
+                          <td>
+                              <input type="checkbox" value="prije mise">prije mise<br/>
+                              <input type="checkbox" value="poslije mise">poslije mise
+                        </td>
+                      </tr>
+                      <tr>
+                          <td><button class="info" type="reset">Očisti obrazac</button></td>
+                          <td><button class="uspjeh" type="submit">Spremi</button></td>
+                      </tr>
+                </table>
+              </form>
+            </div>
+          </div>
+          <div class="podnožje">
+            podnožje
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
