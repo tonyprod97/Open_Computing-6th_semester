@@ -8,87 +8,124 @@ body {
     --boja-uspjeh: #c6f68d;
     --boja-info: #b33d3a;
     --boja-poveznica: #0277bd;
-    font-family: 'Times New Roman';
-    display: flex;
-    height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100%;
     margin: 0px;
+    padding: 0px;
+}
+html, body {
+    height: 100%;
 }
 
 header {
     text-align: center;
-}
-
-.maksimalna-širina {
+    position: absolute;
     width: 100%;
-}
-
-.maksimalna-visina {
-    height: 100%;
-}
-
-.redak {
-    display: flex;
-}
-
-.stupac {
-    display: flex;
-    flex-direction: column;
-}
-
-.zaglavlje {
+    height: 65px;
     background-color: var(--glavna-boja-tamna);
     font-family: 'Franklin Gothic Medium';
     font-size: x-large;
     font-weight: bold;
 }
 
-.navigacija {
+header figure {
+    height: 60px;
+    width: 60px;
+    float: left;
+    position: relative;
+    margin:15px;
+}
+
+header h4 {
+    margin: 0px;
+    margin-top: 20px;
+}
+
+nav {
+    position: absolute;
+    top:65px;
+    bottom: 0px;
+    background-color: var(--glavna-boja);
     border: 2px solid var(--sekundarna-boja-tamna);
     border-left: 0px;
-    background-color: var(--glavna-boja);
-    width: 150px;
+    border-bottom: 0px;
+    width: 208px;
 }
 
-.navigacija ul {
-    list-style-type: circle;
-}
-.navigacija li {
-    border-bottom: 2px dotted var(--sekundarna-boja-tamna);
+footer {
+    position: absolute;
+    height: 25px;
+    background-color: var(--sekundarna-boja-svjetla);
+    bottom: 0px;
+    left: 210px;
+    right: 0px;
+    text-align: end;
+    padding-top: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    color: var(--sekundarna-boja-tamna);
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
-.navigacija a {
+main {
+    position: absolute;
+    left:210px;
+    right: 0px;
+    top:65px;
+    bottom: 30px;
+    padding: 20px;
+    background-color: var(--sekundarna-boja-svjetla);
+}
+
+main article {
+    overflow: auto;
+    box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--sekundarna-boja);
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+nav ul {
+    list-style: square;
+}
+
+nav a {
     color: black;
-    text-decoration: none
+    text-decoration: none;
+    border-bottom: 1px dotted var(--sekundarna-boja-tamna);
+}
+nav a:hover {
+    color: var(--boja-poveznica);
+    text-decoration: underline;
+    border: 0px;
 }
 
-.navigacija a:hover {
-    color:var(--boja-poveznica);
-    font-weight: bolder;
+img {
+    width: 100%;
 }
 
-.tijelo {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-}
-
-.podnožje {
-    background-color: var(--glavna-boja-svjetla);
-}
-
-.tijelo img {
+main article figure {
     width: 320px;
     height: 260px;
+    margin: 0px;
+    padding: 10px;
+    float: right;
 }
-
-.slika {
-    justify-content: center;
+main h2 {
+    text-align: center;
 }
-
+main section {
+    margin-top:20px;
+    overflow: auto;
+}
+.lijevo {
+    float: left;
+}
 table {
     font-family: 'Arial';
     border-collapse: collapse;
+    padding: 10px;
     width: 100%;
 }
 
@@ -100,54 +137,62 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: var(--sekundarna-boja-svjetla);
+    background-color: var(--sekundarna-boja);
     ;
 }
 
-.liste {
-    justify-content: space-evenly;
+.stupac-5 {
+    width: 50%;
+    float: left;
 }
-
-.tablica-obrazac td {
+#liste *{
+    margin-left: 25px;
+}
+form table td {
     border: 0px;
     text-align: center;
 }
 
-.elementi-sredina {
-    justify-content: center;
-}
 
-.obrazac {
-    max-width: 400px;
+
+form {
+    width: 400px;
     border: 1px double var(--sekundarna-boja);
     border-radius: 5px;
     box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.6);
+    margin: auto;
 }
 
-.obrazac input {
+
+form input {
     border-width: 0px 0px 2px 0px;
     padding: 1px;
     background-color: transparent;
+    border-color: var(--sekundarna-boja-tamna);
 }
 
 .pozadina-boja {
-    background-color: var(--sekundarna-boja-svjetla);
+    background-color: var(--sekundarna-boja);
 }
 
 .prozirno {
     background-color: transparent !important;
 }
 
-.nema-vrijednost {
-    text-align: left !important;
-    font-style: italic;
+*[colspan="2"] {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
-.obrazac select[multiple] {
+.podkategorija {
+    font-weight: normal;
+}
+
+select[multiple] {
     overflow: hidden;
 }
 
-.obrazac button {
+form button {
     border: none;
     padding: 15px 32px;
     text-align: center;

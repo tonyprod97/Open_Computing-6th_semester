@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="dizajn.css" />
   </head>
   <body>
-    <div class="stupac maksimalna-širina">
-      <div class="zaglavlje redak">
-        <a href="./index.html" class="naslovna">
-          <img src="" alt="Naslovna slika." />
-        </a>
-        <h4>Crkve Hrvatske</h4>
-      </div>
-      <div class="redak maksimalna-visina">
-        <div class="navigacija">
+        <header>
+          <figure>
+            <a href="./index.html" class="naslovna">
+              <img src="./slike/cross.png" alt="Naslovna slika." />
+            </a>
+          </figure>
+          <h4>Crkve Hrvatske</h4>
+        </header>
+        <nav>
           <ul>
             <li>
               <a href="./index.html">Početna</a>
@@ -34,97 +34,103 @@
               <a href="mailto:antonio.kamber@fer.hr">Email</a>
             </li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="stupac maksimalna-širina">
-          <div class="tijelo">
-            <header><h2>Pretražite</h2></header>
-            <div class="redak obrazac maksimalna-širina elementi-sredina">
+          <main>
+            <h2>Pretražite</h2>
               <form>
-                <table class="tablica-obrazac">
+                <table>
                   <tr>
-                    <td>Naziv crkve:</td>
+                    <td><label for="naziv">Naziv crkve:</label></td>
                     <td>
                       <input
                         type="text"
-                        placeholder="npr. Zagrebačka katedrala"
+                        placeholder="npr. Zagrebačka katedrala" name="naziv"
                       />
                     </td>
                   </tr>
+                  
                   <tr class="pozadina-boja">
-                    <td colspan="2">Adresa</td>
+                    <td colspan="2"><label for="adresa">Adresa</label></td>
                   </tr>
                   <tr class="pozadina-boja">
-                    <td>Mjesto:</td>
-                    <td><input type="text" placeholder="npr. Zagreb" /></td>
+                    <td><label for="mjesto">Mjesto:</label></td>
+                    <td><input name="mjesto" type="text" placeholder="npr. Zagreb" /></td>
                   </tr>
                   <tr class="pozadina-boja">
-                    <td>Poštanski broj:</td>
-                    <td><input type="text" placeholder="npr. 10000" /></td>
+                    <td><label for="poštanski_broj">Poštanski broj:</label></td>
+                    <td><input name="poštanski_broj" type="text" placeholder="npr. 10000" /></td>
                   </tr>
                   <tr class="pozadina-boja">
-                    <td>Ulica, broj:</td>
-                    <td><input type="text" placeholder="npr. Kaptol 31" /></td>
+                    <td><label for="ulica">Ulica:</label></td>
+                    <td><input name="ulica" type="text" placeholder="npr. Kaptol" />
+                    </td>
+                    
+                  </tr>
+                  <tr class="pozadina-boja">
+                    <td><label for="broj">Broj:</label></td>
+                    <td>
+                        <input type="number" min="1" name="broj" placeholder="npr. 31">
+
+                    </td>
                   </tr>
                   <tr class="prozirno">
-                    <td colspan="2">Župni ured</td>
+                    <td colspan="2"><label for="župni_ured">Župni ured</label></td>
                   </tr>
                   <tr class="prozirno">
-                    <td>Adresa elektroničke pošte:</td>
+                    <td><label for="email">Adresa elektroničke pošte:</label></td>
                     <td>
                       <input
-                        type="email"
+                        type="email" name="email"
                         placeholder="katedrala.zagreb@crkve.hr"
                       />
                     </td>
                   </tr>
                   <tr class="prozirno">
-                    <td colspan="2" class="nema-vrijednost">Telefon župnog ureda</td>
+                    <td colspan="2"><label class="podkategorija" for="telefon">Telefon župnog ureda</label></td>
                   </tr>
                   <tr class="prozirno">
-                    <td>Tip:</td>
+                    <td><label for="tip">Tip:</label></td>
                     <td>
-                      <form>
-                        <input type="radio" value="mobilni"/>mobilni<br/>
-                        <input type="radio" value="fiksni"/>fiksni<br/>
-                        <input type="radio" value="telefaks"/>telefaks
-                      </form>
+                        <input type="radio" name="tip" value="mobilni"/>mobilni<br/>
+                        <input type="radio" name="tip" value="fiksni"/>fiksni<br/>
+                        <input type="radio" name="tip" value="telefaks"/>telefaks
                     </td>
                   </tr>
                   <tr class="prozirno">
-                      <td>Pozivni broj mreže:</td>
+                      <td><label for="pozivni_broj">Pozivni broj mreže:</label></td>
                       <td><select>
-                          <option value="098">098</option>
-                          <option value="099">099</option>
-                          <option value="095">095</option>
-                          <option value="092">092</option>
-                          <option value="01" selected>01</option>
+                          <option name="pozivni_broj" value="098">098</option>
+                          <option name="pozivni_broj" value="099">099</option>
+                          <option name="pozivni_broj" value="095">095</option>
+                          <option name="pozivni_broj" value="092">092</option>
+                          <option name="pozivni_broj" value="01" selected>01</option>
                       </select></td>
                   </tr>
                   <tr class="prozirno">
-                      <td>Broj:</td>
-                      <td><input type="number" placeholder="1231231"></td>
+                      <td><label for="broj">Broj:</label></td>
+                      <td><input type="number" name="broj" placeholder="1231231"></td>
                   </tr>
-                  <tr>
-                        <td>Godina osnutka:</td>
+                  <tr><td><label for="godina_osnutka">
+                      Godina osnutka:</label></td>
                         <td>
-                          <input type="number" placeholder="npr. 2005" min="1500" />
+                          <input type="number" name="godina_osnutka" placeholder="npr. 2005" min="1500" />
                         </td>
                       </tr>
                       <tr>
-                          <td>Aktivnosti:</td>
+                          <td><label for="aktivnosti">Aktivnosti:</label></td>
                           <td><select multiple>
-                                <option value="vjeronauk">vjeronauk</option>
-                                <option value="caritas">caritas</option>
-                                <option value="zaruke">zaruke</option>
-                                <option value="ministriranje">ministriranje</option>
+                                <option name="aktivnosti" value="vjeronauk">vjeronauk</option>
+                                <option name="aktivnosti" value="caritas">caritas</option>
+                                <option name="aktivnosti" value="zaruke">zaruke</option>
+                                <option name="aktivnosti" value="ministriranje">ministriranje</option>
                             </select></td>
                       </tr>
                       <tr>
-                          <td>Ispovijedi:</td>
+                          <td><label for="ispovijed">Ispovijedi:</label></td>
                           <td>
-                              <input type="checkbox" value="prije mise">prije mise<br/>
-                              <input type="checkbox" value="poslije mise">poslije mise
+                              <input type="checkbox" value="prije mise" name="ispovijed">prije mise<br/>
+                              <input type="checkbox" value="poslije mise" name="ispovijed">poslije mise
                         </td>
                       </tr>
                       <tr>
@@ -133,13 +139,9 @@
                       </tr>
                 </table>
               </form>
-            </div>
-          </div>
-          <div class="podnožje">
-            podnožje
-          </div>
-        </div>
-      </div>
-    </div>
+            </main>
+          <footer>
+            Autor: Antonio Kamber
+          </footer>
   </body>
 </html>
