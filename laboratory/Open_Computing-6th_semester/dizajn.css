@@ -76,6 +76,7 @@ main {
     bottom: 30px;
     padding: 20px;
     background-color: var(--sekundarna-boja-svjetla);
+    overflow: auto;
 }
 
 main article {
