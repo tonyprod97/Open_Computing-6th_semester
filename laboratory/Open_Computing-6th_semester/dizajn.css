@@ -8,52 +8,46 @@ body {
     --boja-uspjeh: #c6f68d;
     --boja-info: #b33d3a;
     --boja-poveznica: #0277bd;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    height: 100%;
+    font-family: 'Helvetica', 'Arial';
     margin: 0px;
-    padding: 0px;
-}
-html, body {
-    height: 100%;
 }
 
 header {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    height: 65px;
+    height: 50px;
     background-color: var(--glavna-boja-tamna);
     font-family: 'Franklin Gothic Medium';
-    font-size: x-large;
     font-weight: bold;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    padding: 10px;
 }
 
 header figure {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 70px;
     float: left;
-    position: relative;
-    margin:15px;
+    margin: 0px;
+    border-radius: 5px;
+    border: 1px black solid;
+    margin-right: 15px;
 }
 
 header h4 {
+    font-size: 45px;
     margin: 0px;
-    margin-top: 20px;
+    letter-spacing: -3px;
 }
 
 nav {
-    position: absolute;
-    top:65px;
-    bottom: 0px;
+    position: fixed;
+    height: 100%;
     background-color: var(--glavna-boja);
-    border: 2px solid var(--sekundarna-boja-tamna);
-    border-left: 0px;
-    border-bottom: 0px;
+    border-right: 2px solid var(--sekundarna-boja-tamna);
     width: 208px;
+    z-index: -1;
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     height: 25px;
     background-color: var(--sekundarna-boja-svjetla);
     bottom: 0px;
@@ -61,7 +55,7 @@ footer {
     right: 0px;
     text-align: end;
     padding-top: 5px;
-    padding-right: 5px;
+    padding-right: 15px;
     font-size: 14px;
     color: var(--sekundarna-boja-tamna);
     font-style: italic;
@@ -69,41 +63,66 @@ footer {
 }
 
 main {
-    position: absolute;
-    left:210px;
+    position: fixed;
+    left: 210px;
     right: 0px;
-    top:65px;
+    top: 70px;
     bottom: 30px;
     padding: 20px;
     background-color: var(--sekundarna-boja-svjetla);
     overflow: auto;
+    z-index: -1;
 }
 
 main article {
     overflow: auto;
-    box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
     border: 1px solid var(--sekundarna-boja);
     border-radius: 5px;
     padding: 10px;
-    
+    margin: 15px;
+    position: relative;
 }
+
 nav ul {
-    list-style: square;
+    list-style: none;
+    margin-top: 40px;
+    padding-left: 0px;
+}
+
+nav li {
+    border-width: 1px;
+    border-color: var(--sekundarna-boja-tamna);
+    border-style: groove;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 30px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background-image:
+        linear-gradient(to right,
+        var(--glavna-boja-svjetla),
+        var(--glavna-boja-tamna)
+        );
 }
 
 nav a {
     color: black;
     text-decoration: none;
-    border-bottom: 1px dotted var(--sekundarna-boja-tamna);
 }
+
 nav a:hover {
-    color: var(--boja-poveznica);
+    color: black;
     text-decoration: underline;
     border: 0px;
 }
 
 img {
     width: 100%;
+    height: 100%;
 }
 
 main article figure {
@@ -113,16 +132,20 @@ main article figure {
     padding: 10px;
     float: right;
 }
+
 main h2 {
     text-align: center;
 }
+
 main section {
-    margin-top:20px;
+    margin-top: 20px;
     overflow: auto;
 }
+
 .lijevo {
     float: left;
 }
+
 table {
     font-family: 'Arial';
     border-collapse: collapse;
@@ -146,22 +169,24 @@ tr:nth-child(even) {
     width: 50%;
     float: left;
 }
-#liste *{
+
+#liste * {
     margin-left: 25px;
 }
-form table td {
-    border: 0px;
-    text-align: center;
-}
-
 
 
 form {
     width: 400px;
     border: 1px double var(--sekundarna-boja);
     border-radius: 5px;
-    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.6);
     margin: auto;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+legend {
+    text-align: center;
 }
 
 
@@ -172,25 +197,9 @@ form input {
     border-color: var(--sekundarna-boja-tamna);
 }
 
-.pozadina-boja {
-    background-color: var(--sekundarna-boja);
-}
-
-.prozirno {
-    background-color: transparent !important;
-}
-
-*[colspan="2"] {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.podkategorija {
-    font-weight: normal;
-}
-
-select[multiple] {
+form select[multiple] {
     overflow: hidden;
+    vertical-align: top;
 }
 
 form button {
@@ -200,15 +209,51 @@ form button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
     border-radius: 2px;
+}
+
+form button:hover {
+    border: 2px ridge var(--sekundarna-boja-tamna);
 }
 
 .uspjeh {
     background-color: var(--boja-uspjeh);
     color: black;
+    float: right;
 }
 
 .info {
     background-color: var(--boja-info);
     color: white;
+    float: left;
+}
+
+.center-text {
+    text-align: center;
+}
+
+fieldset {
+    margin-top: 5px;
+}
+
+fieldset fieldset>legend {
+    text-align: left;
+}
+
+fieldset fieldset {
+    border-color: var(--sekundarna-boja);
+    border-style: solid;
+}
+
+form div.center-text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#obrazac-gumbi {
+    position: relative;
+    height: 50px;
+    padding: 0px 25px;
+    margin-top: 20px;
 }
