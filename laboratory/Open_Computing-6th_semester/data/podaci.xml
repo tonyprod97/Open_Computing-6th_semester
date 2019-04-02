@@ -20,7 +20,7 @@
     </zupnik>
     <zu:zupni_ured xmlns:zu="zupni_ured">
         <zu:mail>tiskovni@zg-nadbiskupija.hr</zu:mail>
-        <zu:telefon tip="fiksni" br_mreze="01">4894878</zu:telefon>
+        <zu:telefon tip="fiksni" br_mreze="0">14894878</zu:telefon>
     </zu:zupni_ured>
     <adresa>
         <mjesto pos_broj="10000">Zagreb</mjesto>
@@ -35,6 +35,144 @@
     <zbor>
         <naziv>Slavuji Katedrale Zagreb</naziv>
     </zbor>
+    <ispovijed>Prije mise</ispovijed>
+    <ispovijed>Poslije mise</ispovijed>
+</crkva>
+
+<crkva kategorija="katolicka" naziv="Dubrovačka katedrala">
+    <misa>
+        <datum>2019-05-07</datum>
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-05-14</datum>
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-05-21</datum>
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <zupnik>
+        <ime>Vlaho</ime>
+        <prezime>Katušić</prezime>
+        <telefon tip="mobilni" br_mreze="091">8798529</telefon>
+    </zupnik>
+    <zu:zupni_ured xmlns:zu="zupni_ured">
+        <zu:mail>dubrovnik.katedrala@info.hr</zu:mail>
+        <zu:telefon tip="fiksni" br_mreze="0">20312011</zu:telefon>
+    </zu:zupni_ured>
+    <adresa>
+        <mjesto pos_broj="20000">Dubrovnik</mjesto>
+        <ulica kuc_broj="5">Brsalje</ulica>
+    </adresa>
+    <god_osnutka>1713</god_osnutka>
+    <max_kapacitet>500</max_kapacitet>
+    <aktivnost>Vjeronauk</aktivnost>
+    <aktivnost>Caritas</aktivnost>
+    <aktivnost>Zaruke</aktivnost>
+    <zbor>
+        <naziv>Zbor sv. Vlaha</naziv>
+    </zbor>
+    <ispovijed>Prije mise</ispovijed>
+    <ispovijed>Poslije mise</ispovijed>
+</crkva>
+
+<crkva kategorija="katolicka" naziv="Bazilika Srca Isusova">
+    <misa>
+        <datum>2019-05-07</datum>
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-04-22</datum>
+        <vrijeme>19:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-05-21</datum>
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <zupnik>
+        <ime>Mihovil</ime>
+        <prezime>Radić</prezime>
+        <telefon tip="mobilni" br_mreze="092">14568875</telefon>
+    </zupnik>
+    <zu:zupni_ured xmlns:zu="zupni_ured">
+        <zu:mail>zupalma@email.t-com.hr</zu:mail>
+        <zu:telefon tip="fiksni" br_mreze="0">14803050</zu:telefon>
+    </zu:zupni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="31">Palmotićeva</ulica>
+    </adresa>
+    <god_osnutka>1941</god_osnutka>
+    <max_kapacitet>300</max_kapacitet>
+    <aktivnost>Ministriranje</aktivnost>
+    <aktivnost>Caritas</aktivnost>
+    <aktivnost>Zaruke</aktivnost>
+    <zbor>
+        <naziv>SKAC</naziv>
+        <broj>27</broj>
+    </zbor>
+    <ispovijed>Prije mise</ispovijed>
+    <ispovijed>Poslije mise</ispovijed>
+</crkva>
+
+<crkva kategorija="pravoslavna" naziv="Preobraženja gospodnjeg">
+    <misa>
+        <datum>2019-05-07</datum>
+        <vrijeme>06:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-04-22</datum>
+        <vrijeme>17:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-08-21</datum>
+        <vrijeme>10:00</vrijeme>
+    </misa>
+    <zupnik>
+        <ime>Bogdan</ime>
+        <prezime>Malik</prezime>
+        <telefon tip="mobilni" br_mreze="098">9479100</telefon>
+    </zupnik>
+    <zu:zupni_ured xmlns:zu="zupni_ured">
+        <zu:telefon tip="fiksni" br_mreze="0">14614132</zu:telefon>
+    </zu:zupni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+    </adresa>
+    <god_osnutka>1866</god_osnutka>
+    <max_kapacitet>100</max_kapacitet>
+</crkva>
+
+<crkva naziv="Crkva sv. Petra apostola">
+    <misa>
+        <datum>2019-07-12</datum>
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-07-02</datum>
+        <vrijeme>19:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-04-21</datum>
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <zupnik>
+        <ime>Marko</ime>
+        <prezime>Šoltarić</prezime>
+        <telefon tip="mobilni" br_mreze="098">8571289</telefon>
+    </zupnik>
+    <zu:zupni_ured xmlns:zu="zupni_ured">
+        <zu:mail>zupni-ured@sveti-petar.hr</zu:mail>
+        <zu:telefon tip="fiksni" br_mreze="0">14633534</zu:telefon>
+    </zu:zupni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="93">Vlaška</ulica>
+    </adresa>
+    <aktivnost>Ministriranje</aktivnost>
+    <aktivnost>Caritas</aktivnost>
+    <aktivnost>Vjeronauk</aktivnost>
     <ispovijed>Prije mise</ispovijed>
     <ispovijed>Poslije mise</ispovijed>
 </crkva>
