@@ -1,8 +1,13 @@
+var kapacitet_promjena = document.querySelector('#kapacitet_span');
+
+window.addEventListener('load',()=> kapacitet_span.innerHTML = 50);
+
 očisti_obrazac=() => {
-    document.querySelectorAll('span').forEach(el => el.innerHTML='');
+    kapacitet_span.innerHTML='';
 }
 
-raspon_promjena = (value,span) => {
+kapacitet_promjena = (value,span) => {
+    console.log(value,span)
     span.innerHTML = value;
 }
 

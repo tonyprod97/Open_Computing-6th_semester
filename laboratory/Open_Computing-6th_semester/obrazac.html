@@ -3,7 +3,7 @@
   <head>
     <title>Hrvatske Crkve</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="dizajn.css" />
+    <link type="text/css" rel="stylesheet" href="dizajn.css" />
     <script src="skripte/obrazac.js"></script>
   </head>
   <body>
@@ -38,7 +38,6 @@
     <main>
       <h2>Pretraga crkvi</h2>
       <form onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
-        
         <div class="center-text">
           <label for="naziv">Naziv crkve:</label>
 
@@ -49,12 +48,18 @@
             name="naziv"
           />
         </div>
-        <fieldset>
-          <legend>Kapacitet</legend>
-          <label for="minimum">Minimum:</label><input type="range" id="minimum" min=0 max=1000 step=50 value="50" onchange="raspon_promjena(value,minimum_span)"><span id="minimum_span"></span><br/>
-          <label for="maksimum">Maksimum:</label><input type="range" id="maksimum" min=50 max=1000 step="50" value="500" onchange="raspon_promjena(value,maximum_span)"><span id="maximum_span"></span>
-          
-        </fieldset>
+        <div class="center-text">
+        <label for="kapacitet">Kapacitet</label>
+          <input
+            type="range"
+            id="kapacitet"
+            min="0"
+            max="1000"
+            step="50"
+            value="50"
+            onchange="kapacitet_promjena(value,kapacitet_span)"
+          /><span id="kapacitet_span"></span><br />
+          </div>
         <fieldset>
           <legend>Adresa</legend>
 
@@ -84,13 +89,7 @@
 
           <label for="broj">Broj:</label>
 
-          <input
-            type="number"
-            id="broj"
-            min="1"
-            name="broj"
-            placeholder="31"
-          />
+          <input type="number" id="broj" min="1" name="broj" placeholder="31" />
         </fieldset>
 
         <fieldset>
@@ -191,8 +190,8 @@
         </div>
 
         <div id="obrazac-gumbi">
-          <button class="info"  type="reset">Očisti obrazac</button>
-        <button class="uspjeh" type="submit">Spremi</button>
+          <button class="info" type="reset">Očisti obrazac</button>
+          <button class="uspjeh" type="submit">Spremi</button>
         </div>
       </form>
     </main>

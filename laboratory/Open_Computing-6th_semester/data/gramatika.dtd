@@ -1,31 +1,39 @@
 <!-- crkva DTD definicija -->
 <!DOCTYPE crkva [
-<!ELEMENT crkva (misa+,aktivnosti*,zupnik,kapacitet?,zbor?,adresa,zupni_ured,god_osnutka?,ispovijed*)>
+<!ELEMENT crkva (misa+,zupnik,zupni_ured,adresa,god_osnutka?,max_kapacitet?,aktivnost*,zbor?,ispovijed*)>
 <!ATTLIST crkva kategorija (katolicka|pravoslavna|protestantska) katolicka>
 <!ATTLIST crkva naziv CDATA #REQUIRED>
+<!--misa-->
 <!ELEMENT misa (datum,vrijeme)>
-<!ATTLIST misa datum CDATA #REQUIRED>
-<!ATTLIST misa vrijeme CDATA #REQUIRED>
-<!ELEMENT aktivnosti (#PCDATA)>
+<!ELEMENT datum (#PCDATA)>
+<!ELEMENT vrijeme (#PCDATA)>
+<!--zupnik-->
 <!ELEMENT zupnik (ime,prezime,telefon*)>
 <!ELEMENT ime (#PCDATA)>
 <!ELEMENT prezime (#PCDATA)>
 <!ELEMENT telefon (#PCDATA)>
 <!ATTLIST telefon tip (mobilni|fiksni|telefaks) mobilni>
-<!ATTLIST telefon br_mreže (099|098|095|092|091|01) #REQUIRED>
-<!ELEMENT kapacitet (minimum,maksimum)>
-<!ELEMENT minimum (#PCDATA)>
-<!ELEMENT maksimum (#PCDATA)>
-<!ELEMENT zbor (naziv,broj?)>
-<!ELEMENT naziv (#PCDATA)>
-<!ELEMENT broj (#PCDATA)>
+<!ATTLIST telefon br_mreze (099|098|095|092|091|01) #REQUIRED>
+<!-- zupni_ured -->
+<!ELEMENT zupni_ured (mail?,telefon)><!-- telefon 2 puta ? -->
+<!ELEMENT mail (#PCDATA)>
+<!-- telefon zupni_ured -->
+<!-- adresa -->
 <!ELEMENT adresa (mjesto,ulica?)>
 <!ELEMENT mjesto (#PCDATA)>
 <!ATTLIST mjesto pos_broj CDATA #REQUIRED>
 <!ELEMENT ulica (#PCDATA)>
 <!ATTLIST ulica kuc_broj CDATA #IMPLIED>
-<!ELEMENT zupni_ured (mail?,telefon)><!-- telefon 2 puta ? -->
-<!ELEMENT mail (#PCDATA)>
+<!-- god_osnutka -->
 <!ELEMENT god_osnutka (#PCDATA)>
+<!-- max_kapacitet -->
+<!ELEMENT max_kapacitet (#PCDATA)>
+<!-- aktivnost -->
+<!ELEMENT aktivnost (#PCDATA)>
+<!-- zbor -->
+<!ELEMENT zbor (naziv,broj?)>
+<!ELEMENT naziv (#PCDATA)>
+<!ELEMENT broj (#PCDATA)>
+<!-- ispovijed -->
 <!ELEMENT ispovijed (#PCDATA)>
 ]>

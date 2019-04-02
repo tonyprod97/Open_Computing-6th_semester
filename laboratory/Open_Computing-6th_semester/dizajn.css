@@ -1,24 +1,26 @@
 body {
-    --glavna-boja: #c0ca33;
-    --glavna-boja-tamna: #8c9900;
-    --glavna-boja-svjetla: #f5fd67;
-    --sekundarna-boja-tamna: #3c3c3c;
-    --sekundarna-boja: #c2c2c2;
-    --sekundarna-boja-svjetla: #f0f0f0;
-    --boja-uspjeh: #c6f68d;
-    --boja-info: #b33d3a;
+    --glavna-boja: #827717;
+    --glavna-boja-tamna: #524c00;
+    --glavna-boja-svijetla: #b4a647;
+    --sekundarna-boja-tamna: #babdbe;
+    --sekundarna-boja: #eceff1;
+    --sekundarna-boja-svijetla: #f0f0f0;
+    --boja-uspjeh: #1faa00;
+    --boja-info: #0064b7;
     --boja-poveznica: #0277bd;
-    font-family: 'Helvetica', 'Arial';
+    --glavna-boja-tekst: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
     margin: 0px;
 }
 
 header {
     height: 50px;
-    background-color: var(--glavna-boja-tamna);
-    font-family: 'Franklin Gothic Medium';
+    background-color: var(--glavna-boja);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
     padding: 10px;
+    color: var(--glavna-boja-tekst);
 }
 
 header figure {
@@ -26,30 +28,32 @@ header figure {
     width: 70px;
     float: left;
     margin: 0px;
-    border-radius: 5px;
-    border: 1px black solid;
     margin-right: 15px;
+}
+
+header img {
+    border-radius: 15px;
 }
 
 header h4 {
     font-size: 45px;
     margin: 0px;
-    letter-spacing: -3px;
+
 }
 
 nav {
     position: fixed;
     height: 100%;
-    background-color: var(--glavna-boja);
-    border-right: 2px solid var(--sekundarna-boja-tamna);
-    width: 208px;
+    background-color: var(--glavna-boja-svijetla);
+    border-right: 2px solid var(--glavna-boja);
+    width: 200px;
     z-index: -1;
 }
 
 footer {
     position: fixed;
     height: 25px;
-    background-color: var(--sekundarna-boja-svjetla);
+    background-color: var(--sekundarna-boja-svijetla);
     bottom: 0px;
     left: 210px;
     right: 0px;
@@ -64,14 +68,14 @@ footer {
 
 main {
     position: fixed;
-    left: 210px;
+    left: 202px;
     right: 0px;
     top: 70px;
     bottom: 30px;
     padding: 20px;
-    background-color: var(--sekundarna-boja-svjetla);
     overflow: auto;
     z-index: -1;
+    background-color: var(--sekundarna-boja)
 }
 
 main article {
@@ -82,6 +86,8 @@ main article {
     padding: 10px;
     margin: 15px;
     position: relative;
+    background-color: var(--sekundarna-boja-svijetla);
+
 }
 
 nav ul {
@@ -91,33 +97,34 @@ nav ul {
 }
 
 nav li {
-    border-width: 1px;
-    border-color: var(--sekundarna-boja-tamna);
-    border-style: groove;
     padding-left: 10px;
     padding-top: 10px;
     height: 30px;
     vertical-align: middle;
     font-weight: bold;
+    margin-bottom: 10px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: var(--glavna-boja-tamna)
 }
 
 nav li:hover {
     background-image:
         linear-gradient(to right,
-        var(--glavna-boja-svjetla),
-        var(--glavna-boja-tamna)
-        );
+        var(--glavna-boja-svijetla),
+        var(--glavna-boja-tamna));
 }
 
 nav a {
-    color: black;
     text-decoration: none;
+    color: var(--glavna-boja-tekst);
 }
 
 nav a:hover {
-    color: black;
     text-decoration: underline;
-    border: 0px;
 }
 
 img {
@@ -142,32 +149,29 @@ main section {
     overflow: auto;
 }
 
-.lijevo {
-    float: left;
-}
-
 table {
     font-family: 'Arial';
-    border-collapse: collapse;
+    border-collapse: separate;
     padding: 10px;
     width: 100%;
 }
 
 td,
 th {
-    border: 1px solid var(--sekundarna-boja);
+    border: 1px solid var(--sekundarna-boja-tamna);
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: var(--sekundarna-boja);
+    background-color: var(--sekundarna-boja-tamna);
     ;
 }
 
 .stupac-5 {
     width: 50%;
     float: left;
+    overflow: auto;
 }
 
 #liste * {
@@ -183,6 +187,7 @@ form {
     margin: auto;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--sekundarna-boja-svijetla);
 }
 
 legend {
@@ -211,6 +216,7 @@ form button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 2px;
+    color: var(--glavna-boja-tekst);
 }
 
 form button:hover {
@@ -219,13 +225,11 @@ form button:hover {
 
 .uspjeh {
     background-color: var(--boja-uspjeh);
-    color: black;
     float: right;
 }
 
 .info {
     background-color: var(--boja-info);
-    color: white;
     float: left;
 }
 
@@ -256,4 +260,10 @@ form div.center-text {
     height: 50px;
     padding: 0px 25px;
     margin-top: 20px;
+}
+
+#crkve-artikl a {
+    position: absolute;
+    bottom: 5px;
+    color: var(--boja-poveznica)
 }

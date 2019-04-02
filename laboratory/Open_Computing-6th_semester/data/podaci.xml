@@ -1,0 +1,40 @@
+<!DOCTYPE crkva SYSTEM "./gramatika.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<crkva kategorija="katolicka" naziv="Zagrebačka katedrala">
+    <misa>
+        <datum>2019-04-07</datum>
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-04-14</datum>
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-04-21</datum>
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <zupnik>
+        <ime>Ivan</ime>
+        <prezime>Ivanić</prezime>
+        <telefon tip="mobilni" br_mreze="099">9998989</telefon>
+    </zupnik>
+    <zu:zupni_ured xmlns:zu="zupni_ured">
+        <zu:mail>tiskovni@zg-nadbiskupija.hr</zu:mail>
+        <zu:telefon tip="fiksni" br_mreze="01">4894878</zu:telefon>
+    </zu:zupni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="31">Kaptol</ulica>
+    </adresa>
+    <god_osnutka>1094</god_osnutka>
+    <max_kapacitet>1500</max_kapacitet>
+    <aktivnost>Vjeronauk</aktivnost>
+    <aktivnost>Caritas</aktivnost>
+    <aktivnost>Zaruke</aktivnost>
+    <aktivnost>Ministriranje</aktivnost>
+    <zbor>
+        <naziv>Slavuji Katedrale Zagreb</naziv>
+    </zbor>
+    <ispovijed>Prije mise</ispovijed>
+    <ispovijed>Poslije mise</ispovijed>
+</crkva>
