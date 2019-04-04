@@ -1,24 +1,26 @@
 <!-- crkva DTD definicija -->
-<!ELEMENT podaci (crkva*)>
-<!ELEMENT crkva (naziv,župnik,župni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,zbor?)>
-<!ATTLIST crkva kategorija (katolička|pravoslavna|protestantska) #REQUIRED>
+
+<!ELEMENT crkva (naziv,zupnik,zupni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,zbor?)>
+<!ATTLIST crkva kategorija (katolicka|pravoslavna|protestantska) #REQUIRED>
 <!ATTLIST crkva aktivnosti (Vjeronauk|Ministriranje|Caritas|Zaruke) #IMPLIED>
 <!-- naziv -->
 <!ELEMENT naziv (#PCDATA)>
-<!--župnik-->
-<!ELEMENT župnik (ime,prezime,telefon*)>
+<!--zupnik-->
+<!ELEMENT zupnik (ime,prezime,telefon*)>
 <!ELEMENT ime (#PCDATA)>
 <!ELEMENT prezime (#PCDATA)>
 <!ELEMENT telefon (#PCDATA)>
 <!ATTLIST telefon tip (mobilni|fiksni|telefaks) #IMPLIED>
-<!ATTLIST telefon br_mreze (099|098|095|092|091|0) #REQUIRED>
-<!-- župni_ured -->
-<!ELEMENT župni_ured (mail?,zu_telefon)>
+<!ATTLIST telefon br_mreze (099|098|095|092|091|01) #REQUIRED>
+<!-- zupni_ured -->
+<!ELEMENT zupni_ured (mail?,telefon)>
+<!ATTLIST zupni_ured xmlns:zu CDATA #FIXED "http://hrvatske-crkve/zupni_ured">
 <!ELEMENT mail (#PCDATA)>
-<!ELEMENT zu_telefon (#PCDATA)>
-<!ATTLIST zu_telefon tip (mobilni|fiksni|telefaks) #IMPLIED>
-<!ATTLIST zu_telefon br_mreze (099|098|095|092|091|0) #REQUIRED>
-
+<!-- 
+<!ELEMENT telefon (#PCDATA)>
+<!ATTLIST telefon tip (mobilni|fiksni|telefaks) #IMPLIED>
+<!ATTLIST telefon br_mreze (099|098|095|092|091|01) #REQUIRED>
+ -->
 <!-- adresa -->
 <!ELEMENT adresa (mjesto,ulica?)>
 <!ELEMENT mjesto (#PCDATA)>
@@ -35,6 +37,6 @@
 <!-- max_kapacitet -->
 <!ELEMENT max_kapacitet (#PCDATA)>
 <!-- zbor -->
-<!ELEMENT zbor (zbor_naziv,broj?)>
-<!ELEMENT zbor_naziv (#PCDATA)>
+<!ELEMENT zbor (naziv,broj?)>
+<!--!ELEMENT naziv (#PCDATA)> -->
 <!ELEMENT broj (#PCDATA)>
