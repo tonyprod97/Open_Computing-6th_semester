@@ -6,6 +6,7 @@
                 <title>Hrvatske Crkve</title>
                 <meta charset="UTF-8" />
                 <link rel="stylesheet" type="text/css" href="../dizajn.css" />
+                <link rel="stylesheet" type="text/css" href="../dizajn/pretvorba.css"/>
             </head>
             <body>
                 <header>
@@ -20,13 +21,13 @@
     <nav>
       <ul>
         <li>
-          <a href="./index.html">Početna</a>
+          <a href="../index.html">Početna</a>
         </li>
         <li>
-          <a href="./obrazac.html">Pretraživanje</a>
+          <a href="../obrazac.html">Pretraživanje</a>
         </li>
         <li>
-          <a href="./data/podaci.xml">Popis Crkvi</a>
+          <a href="./podaci.xml">Popis Crkvi</a>
         </li>
         <li>
           <a href="http://www.fer.unizg.hr/predmet/or">Otvoreno Računarstvo</a>
@@ -41,6 +42,7 @@
     </nav>
                 <main>
                     <section>
+                      <xsl:attribute name="id">pretvorba-tablica</xsl:attribute>
                         <table>
                     <thead>
                         <th>Naziv</th>
@@ -53,6 +55,7 @@
                     </thead>
                     <tbody>
                         <xsl:for-each select="crkva">
+                          <xsl:sort select="god_osnutka" />
                             <tr>
                                 <td><xsl:value-of select="naziv"/></td>
                                 <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/> - <xsl:value-of select="adresa/mjesto"/></td>
@@ -68,7 +71,7 @@
                                     </xsl:if>
                                 </td>
                                 <td><xsl:if test="god_osnutka != ''">
-                                    <xsl:value-of select="god_osnutka"/>
+                                    <xsl:value-of select="god_osnutka"/>.
                                 </xsl:if>
                                 <xsl:if test="not(god_osnutka)">
                                     Nepoznato

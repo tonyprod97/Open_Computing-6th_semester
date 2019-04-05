@@ -134,6 +134,31 @@
     <god_osnutka>1866</god_osnutka>
     <max_kapacitet>100</max_kapacitet>
 </crkva>
+<crkva kategorija="pravoslavna">
+    <naziv>Crkva sv. Trojice</naziv>
+    <župnik>
+        <ime>Nast</ime>
+        <prezime>Rojić</prezime>
+        <telefon tip="mobilni" br_mreze="098">8971523</telefon>
+    </župnik>
+    <župni_ured>
+        <zu_telefon tip="fiksni" br_mreze="0">14614132</zu_telefon>
+    </župni_ured>
+    <adresa>
+        <mjesto pos_broj="43000">Bjelovar</mjesto>
+        <ulica kuc_broj="8">Ulica Ljudevita Gaja</ulica>
+    </adresa>
+    <misa>
+        <datum>2019-05-17</datum>
+        <vrijeme>06:00</vrijeme>
+    </misa>
+    <misa>
+        <datum>2019-05-22</datum>
+        <vrijeme>17:00</vrijeme>
+    </misa>
+    <god_osnutka>1793</god_osnutka>
+    <max_kapacitet>150</max_kapacitet>
+</crkva>
 <crkva kategorija="katolička" aktivnosti="Vjeronauk">
     <naziv>Crkva Gospe od Betlema</naziv>
     <župnik>
