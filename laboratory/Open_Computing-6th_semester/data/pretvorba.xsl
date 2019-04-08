@@ -60,8 +60,7 @@
                                 <td><xsl:value-of select="naziv"/></td>
                                 <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/> - <xsl:value-of select="adresa/mjesto"/></td>
                                 <td><xsl:value-of select="@kategorija"/></td>
-                                <td><xsl:value-of select="župnik/ime"/> <xsl:value-of select="župnik/prezime"/>
-                                </td>
+                                <td><xsl:value-of select="župnik/ime"/> <xsl:value-of select="župnik/prezime"/></td>
                                 <td>
                                     <xsl:if test="župni_ured/mail != ''">
                                         <xsl:value-of select="župni_ured/mail"/>
@@ -77,12 +76,16 @@
                                     Nepoznato
                                 </xsl:if>
                                 </td>
-                                <td><xsl:if test="max_kapacitet != ''">
-                                    <xsl:value-of select="max_kapacitet"/>
-                                </xsl:if>
-                                <xsl:if test="not(max_kapacitet)">
-                                    Nepoznato
-                                </xsl:if>
+                                <td>
+                                  <xsl:choose>
+                                    <!-- može se i sa if ali radi probe sam koristio choose-->
+                                    <xsl:when test="max_kapacitet != ''">
+                                      <xsl:value-of select="max_kapacitet"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                       Nepoznato
+                                    </xsl:otherwise>
+                                  </xsl:choose>
                                 </td>
                             </tr>
                         </xsl:for-each>
