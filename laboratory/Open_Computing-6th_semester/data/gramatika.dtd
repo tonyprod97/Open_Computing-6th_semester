@@ -2,7 +2,7 @@
 <!ELEMENT podaci (crkva*)>
 <!ELEMENT crkva (naziv,župnik,župni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,zbor?)>
 <!ATTLIST crkva kategorija (katolička|pravoslavna|protestantska) #REQUIRED>
-<!ATTLIST crkva aktivnosti (Vjeronauk|Ministriranje|Caritas|Zaruke) #IMPLIED>
+<!ATTLIST crkva aktivnosti NMTOKENS #IMPLIED>
 <!-- naziv -->
 <!ELEMENT naziv (#PCDATA)>
 <!--župnik-->
@@ -26,9 +26,9 @@
 <!ELEMENT ulica (#PCDATA)>
 <!ATTLIST ulica kuc_broj CDATA #IMPLIED>
 <!--misa-->
-<!ELEMENT misa (datum,vrijeme)>
+<!ELEMENT misa (vrijeme)>
+<!ATTLIST misa dan_u_tjednu (Ponedjeljak|Utorak|Srijeda|Četvrtak|Petak|Subota|Nedjelja) #REQUIRED>
 <!ATTLIST misa ispovijed (Prije|Poslije) #IMPLIED>
-<!ELEMENT datum (#PCDATA)>
 <!ELEMENT vrijeme (#PCDATA)>
 <!-- god_osnutka -->
 <!ELEMENT god_osnutka (#PCDATA)>

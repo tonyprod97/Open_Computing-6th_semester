@@ -3,7 +3,7 @@
 <?xml-stylesheet type="text/xsl" href="./pretvorba.xsl"?>
 <podaci>
     
-<crkva kategorija="katolička" aktivnosti="Ministriranje">
+<crkva kategorija="katolička" aktivnosti="Ministriranje Zaruke">
     <naziv>Zagrebačka katedrala</naziv>
     <župnik>
         <ime>Ivan</ime>
@@ -18,16 +18,13 @@
         <mjesto pos_broj="10000">Zagreb</mjesto>
         <ulica kuc_broj="31">Kaptol</ulica>
     </adresa>
-    <misa ispovijed="Prije">
-        <datum>2019-04-07</datum>
+    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
         <vrijeme>08:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-04-14</datum>
+    <misa dan_u_tjednu="Subota" ispovijed="Prije">
         <vrijeme>18:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-04-21</datum>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
         <vrijeme>11:00</vrijeme>
     </misa>
     <god_osnutka>1094</god_osnutka>
@@ -36,7 +33,7 @@
         <zbor_naziv>Slavuji Katedrale Zagreb</zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Zaruke">
+<crkva kategorija="katolička" aktivnosti="Zaruke Vjeronauk">
     <naziv>Dubrovačka katedrala</naziv>
     <župnik>
         <ime>Vlaho</ime>
@@ -51,16 +48,13 @@
         <mjesto pos_broj="20000">Dubrovnik</mjesto>
         <ulica kuc_broj="5">Brsalje</ulica>
     </adresa>
-    <misa ispovijed="Prije">
-        <datum>2019-05-07</datum>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
         <vrijeme>08:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-05-14</datum>
+    <misa dan_u_tjednu="Petak" ispovijed="Prije">
         <vrijeme>18:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-05-21</datum>
+    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
         <vrijeme>11:00</vrijeme>
     </misa>
     <max_kapacitet>500</max_kapacitet>
@@ -70,7 +64,7 @@
             </zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Caritas">
+<crkva kategorija="katolička" aktivnosti="Caritas Vjeronauk Zaruke">
     <naziv>Katedrala Svetog Vida</naziv>
     <župnik>
         <ime>Mihovil</ime>
@@ -85,16 +79,13 @@
         <mjesto pos_broj="51000">Rijeka</mjesto>
         <ulica kuc_broj="2">Trg Svete Barbare</ulica>
     </adresa>
-    <misa>
-        <datum>2019-05-07</datum>
+    <misa dan_u_tjednu="Ponedjeljak">
         <vrijeme>08:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-04-22</datum>
+    <misa dan_u_tjednu="Petak" ispovijed="Prije">
         <vrijeme>19:00</vrijeme>
     </misa>
-    <misa ispovijed="Prije">
-        <datum>2019-05-21</datum>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
         <vrijeme>11:00</vrijeme>
     </misa>
     <god_osnutka>1638</god_osnutka>
@@ -119,16 +110,13 @@
     <adresa>
         <mjesto pos_broj="10000">Zagreb</mjesto>
     </adresa>
-    <misa>
-        <datum>2019-05-07</datum>
-        <vrijeme>06:00</vrijeme>
-    </misa>
-    <misa>
-        <datum>2019-04-22</datum>
+  <misa dan_u_tjednu="Utorak">
+    <vrijeme>06:00</vrijeme>
+  </misa>
+    <misa dan_u_tjednu="Srijeda">
         <vrijeme>17:00</vrijeme>
     </misa>
-    <misa>
-        <datum>2019-08-21</datum>
+    <misa dan_u_tjednu="Petak">
         <vrijeme>10:00</vrijeme>
     </misa>
     <god_osnutka>1866</god_osnutka>
@@ -148,18 +136,16 @@
         <mjesto pos_broj="43000">Bjelovar</mjesto>
         <ulica kuc_broj="8">Ulica Ljudevita Gaja</ulica>
     </adresa>
-    <misa>
-        <datum>2019-05-17</datum>
+    <misa dan_u_tjednu="Ponedjeljak">
         <vrijeme>06:00</vrijeme>
     </misa>
-    <misa>
-        <datum>2019-05-22</datum>
+    <misa dan_u_tjednu="Utorak">
         <vrijeme>17:00</vrijeme>
     </misa>
     <god_osnutka>1793</god_osnutka>
     <max_kapacitet>150</max_kapacitet>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Vjeronauk">
+<crkva kategorija="katolička" aktivnosti="Vjeronauk Zaruke">
     <naziv>Crkva Gospe od Betlema</naziv>
     <župnik>
         <ime>Marko</ime>
@@ -174,16 +160,13 @@
         <mjesto pos_broj="21000">Split</mjesto>
         <ulica kuc_broj="3">Marangunićevo šetalište</ulica>
     </adresa>
-    <misa ispovijed="Poslije">
-        <datum>2019-07-12</datum>
+    <misa dan_u_tjednu="Petak" ispovijed="Poslije">
         <vrijeme>08:00</vrijeme>
     </misa>
-    <misa ispovijed="Poslije">
-        <datum>2019-07-02</datum>
+    <misa dan_u_tjednu="Subota" ispovijed="Poslije">
         <vrijeme>19:00</vrijeme>
     </misa>
-    <misa ispovijed="Poslije">
-        <datum>2019-04-21</datum>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Poslije">
         <vrijeme>18:00</vrijeme>
     </misa>
     <god_osnutka>1500</god_osnutka>

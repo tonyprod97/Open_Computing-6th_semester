@@ -58,16 +58,18 @@
                           <xsl:sort select="god_osnutka" />
                             <tr>
                                 <td><xsl:value-of select="naziv"/></td>
-                                <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/> - <xsl:value-of select="adresa/mjesto"/></td>
-                                <td><xsl:value-of select="@kategorija"/></td>
-                                <td><xsl:value-of select="župnik/ime"/> <xsl:value-of select="župnik/prezime"/></td>
+                                <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/>&#044; <xsl:value-of select="adresa/mjesto"/></td>
+                                <td>
+                                  <xsl:for-each select="misa">
+                                    <xsl:value-of select="@dan_u_tjednu"/>&#044;&#160; početak&#058; &#160; <xsl:value-of select="vrijeme"/><hr/>
+                                  </xsl:for-each>
+                                </td>
+                                <td><xsl:value-of select="župnik/ime"/>&#160;<xsl:value-of select="župnik/prezime"/></td>
                                 <td>
                                     <xsl:if test="župni_ured/mail != ''">
                                         <xsl:value-of select="župni_ured/mail"/>
                                     </xsl:if>
-                                    <xsl:if test="not(župni_ured/mail)">
-                                        -
-                                    </xsl:if>
+                                    <xsl:if test="not(župni_ured/mail)">&#8211;</xsl:if>
                                 </td>
                                 <td><xsl:if test="god_osnutka != ''">
                                     <xsl:value-of select="god_osnutka"/>.
