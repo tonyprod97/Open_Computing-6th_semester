@@ -3,12 +3,13 @@
 <?xml-stylesheet type="text/xsl" href="./pretvorba.xsl"?>
 <podaci>
     
-<crkva kategorija="katolička" aktivnosti="Ministriranje Zaruke">
+<crkva kategorija="katolička">
     <naziv>Zagrebačka katedrala</naziv>
     <župnik>
         <ime>Ivan</ime>
         <prezime>Ivanić</prezime>
         <telefon tip="mobilni" br_mreze="099">9998989</telefon>
+        <telefon tip="mobilni" br_mreze="0">12453453</telefon>
     </župnik>
     <župni_ured>
         <mail>tiskovni@zg-nadbiskupija.hr</mail>
@@ -29,16 +30,19 @@
     </misa>
     <god_osnutka>1094</god_osnutka>
     <max_kapacitet>1500</max_kapacitet>
+  <aktivnost naziv="Vjeronauk"/>
+  <aktivnost naziv="Zaruke"/>
     <zbor>
         <zbor_naziv>Slavuji Katedrale Zagreb</zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Zaruke Vjeronauk">
+<crkva kategorija="katolička">
     <naziv>Dubrovačka katedrala</naziv>
     <župnik>
         <ime>Vlaho</ime>
         <prezime>Katušić</prezime>
         <telefon tip="mobilni" br_mreze="091">8798529</telefon>
+        <telefon tip="mobilni" br_mreze="092">8709229</telefon>
     </župnik>
     <župni_ured>
         <mail>dubrovnik.katedrala@info.hr</mail>
@@ -58,14 +62,18 @@
         <vrijeme>11:00</vrijeme>
     </misa>
     <max_kapacitet>500</max_kapacitet>
+  <aktivnost naziv="Vjeronauk"/>
+  <aktivnost naziv="Caritas"/>
+  <aktivnost naziv="Ministriranje"/>
       <zbor>
         <zbor_naziv>
             Zbor sv. Vlaha
             </zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Caritas Vjeronauk Zaruke">
-    <naziv>Katedrala Svetog Vida</naziv>
+<crkva kategorija="katolička" >
+       <!-- naziv je jednak naslovu na wiki-->
+    <naziv>Katedrala Svetog Vida u Rijeci</naziv>
     <župnik>
         <ime>Mihovil</ime>
         <prezime>Radić</prezime>
@@ -90,6 +98,7 @@
     </misa>
     <god_osnutka>1638</god_osnutka>
     <max_kapacitet>300</max_kapacitet>
+  <aktivnost naziv="Zaruke"/>
     <zbor>
         <zbor_naziv>
             Vidova Dica
@@ -98,7 +107,8 @@
     </zbor>
 </crkva>
 <crkva kategorija="pravoslavna">
-    <naziv>Preobraženja gospodnjeg</naziv>
+  <!-- naziv je jednak naslovu na wiki-->
+  <naziv>Saborna crkva Preobraženja Gospodnjeg u Zagrebu</naziv>
     <župnik>
         <ime>Bogdan</ime>
         <prezime>Malik</prezime>
@@ -120,10 +130,11 @@
         <vrijeme>10:00</vrijeme>
     </misa>
     <god_osnutka>1866</god_osnutka>
-    <max_kapacitet>100</max_kapacitet>
+    <max_kapacitet>70</max_kapacitet>
 </crkva>
 <crkva kategorija="pravoslavna">
-    <naziv>Crkva sv. Trojice</naziv>
+     <!-- naziv je jednak naslovu na wiki-->
+    <naziv>Pravoslavna crkva sv. Trojice u Bjelovaru</naziv>
     <župnik>
         <ime>Nast</ime>
         <prezime>Rojić</prezime>
@@ -144,9 +155,10 @@
     </misa>
     <god_osnutka>1793</god_osnutka>
     <max_kapacitet>150</max_kapacitet>
+  <aktivnost naziv="Caritas"/>
 </crkva>
-<crkva kategorija="katolička" aktivnosti="Vjeronauk Zaruke">
-    <naziv>Crkva Gospe od Betlema</naziv>
+<crkva kategorija="katolička">
+    <naziv>crkva Gospe od Betlema</naziv>
     <župnik>
         <ime>Marko</ime>
         <prezime>Šoltarić</prezime>

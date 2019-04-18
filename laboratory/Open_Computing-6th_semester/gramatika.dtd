@@ -1,8 +1,7 @@
 <!-- crkva DTD definicija -->
-<!ELEMENT podaci (crkva*)>
-<!ELEMENT crkva (naziv,župnik,župni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,zbor?)>
+<!ELEMENT podaci (crkva+)>
+<!ELEMENT crkva (naziv,župnik,župni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,aktivnost*,zbor?)>
 <!ATTLIST crkva kategorija (katolička|pravoslavna|protestantska) #REQUIRED>
-<!ATTLIST crkva aktivnosti NMTOKENS #IMPLIED>
 <!-- naziv -->
 <!ELEMENT naziv (#PCDATA)>
 <!--župnik-->
@@ -34,6 +33,9 @@
 <!ELEMENT god_osnutka (#PCDATA)>
 <!-- max_kapacitet -->
 <!ELEMENT max_kapacitet (#PCDATA)>
+<!-- aktivnost -->
+<!ELEMENT aktivnost EMPTY>
+<!ATTLIST aktivnost naziv (Vjeronauk|Zaruke|Ministriranje|Caritas) #REQUIRED>
 <!-- zbor -->
 <!ELEMENT zbor (zbor_naziv,broj?)>
 <!ELEMENT zbor_naziv (#PCDATA)>

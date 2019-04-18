@@ -5,14 +5,14 @@
             <head>
                 <title>Hrvatske Crkve</title>
                 <meta charset="UTF-8" />
-                <link rel="stylesheet" type="text/css" href="../dizajn.css" />
-                <link rel="stylesheet" type="text/css" href="../dizajn/pretvorba.css"/>
+                <link rel="stylesheet" type="text/css" href="./dizajn.css" />
+                <link rel="stylesheet" type="text/css" href="./dizajn/pretvorba.css"/>
             </head>
             <body>
                 <header>
       <figure>
         <a href="./index.html" class="naslovna">
-          <img src="../slike/cross.png" alt="Naslovna slika." />
+          <img src="./slike/cross.png" alt="Naslovna slika." />
         </a>
       </figure>
       <h4>Crkve Hrvatske</h4>
@@ -21,10 +21,10 @@
     <nav>
       <ul>
         <li>
-          <a href="../index.html">Početna</a>
+          <a href="./index.html">Početna</a>
         </li>
         <li>
-          <a href="../obrazac.html">Pretraživanje</a>
+          <a href="./obrazac.html">Pretraživanje</a>
         </li>
         <li>
           <a href="./podaci.xml">Popis Crkvi</a>
@@ -46,47 +46,53 @@
                         <table>
                     <thead>
                         <th>Naziv</th>
-                        <th>Mjesto</th>
-                        <th>Kategorija</th>
+                        <th>Raspored Misa</th>
                         <th>Župnik</th>
-                        <th>Župni ured</th>
-                        <th>Godina osnutka</th>
+                        <th>Mjesto</th>
                         <th>Kapacitet</th>
+                        <th>Aktivnosti</th>
                     </thead>
                     <tbody>
                         <xsl:for-each select="crkva">
                           <xsl:sort select="god_osnutka" />
                             <tr>
                                 <td><xsl:value-of select="naziv"/></td>
-                                <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/>&#044; <xsl:value-of select="adresa/mjesto"/></td>
                                 <td>
                                   <xsl:for-each select="misa">
-                                    <xsl:value-of select="@dan_u_tjednu"/>&#044;&#160; početak&#058; &#160; <xsl:value-of select="vrijeme"/><hr/>
+                                    <xsl:value-of select="@dan_u_tjednu"/>, <xsl:value-of select="vrijeme"/>h<br/>
+                                    <xsl:if test="position()!=last()">
+                                      <hr/>
+                                    </xsl:if>
                                   </xsl:for-each>
                                 </td>
-                                <td><xsl:value-of select="župnik/ime"/>&#160;<xsl:value-of select="župnik/prezime"/></td>
                                 <td>
-                                    <xsl:if test="župni_ured/mail != ''">
-                                        <xsl:value-of select="župni_ured/mail"/>
-                                    </xsl:if>
-                                    <xsl:if test="not(župni_ured/mail)">&#8211;</xsl:if>
+                                    <xsl:value-of select="župnik/ime"/>&#160;<xsl:value-of select="župnik/prezime"/><br/>
+                                    Kontakt:
+                                    <xsl:for-each select="župnik/telefon">
+                                      <xsl:value-of select="@br_mreze"/><xsl:value-of select="text()"/>
+                                      <br/>
+                                    </xsl:for-each>
                                 </td>
-                                <td><xsl:if test="god_osnutka != ''">
-                                    <xsl:value-of select="god_osnutka"/>.
-                                </xsl:if>
-                                <xsl:if test="not(god_osnutka)">
-                                    Nepoznato
-                                </xsl:if>
+                                <td> <xsl:value-of select="adresa/mjesto/@pos_broj"/>, <xsl:value-of select="adresa/mjesto"/></td>
+                                <td>
+                                  <xsl:if test="max_kapacitet &gt; 100">
+                                    Maksimalno <xsl:value-of select="max_kapacitet"/>
+                                  </xsl:if>
+                                  <xsl:if test="max_kapacitet &lt; 100">
+                                    Do 100
+                                  </xsl:if>
+                                  <xsl:if test="not(max_kapacitet)">Nepoznato</xsl:if>
                                 </td>
                                 <td>
+                                  <!-- može i sa if ali sam koristio choose radi edukacije -->
                                   <xsl:choose>
-                                    <!-- može se i sa if ali radi probe sam koristio choose-->
-                                    <xsl:when test="max_kapacitet != ''">
-                                      <xsl:value-of select="max_kapacitet"/>
+                                    <xsl:when test="count(aktivnost) > 0">
+                                      <xsl:for-each select="aktivnost">
+                                            <xsl:value-of select="@naziv"/>
+                                            <br/>
+                                      </xsl:for-each>
                                     </xsl:when>
-                                    <xsl:otherwise>
-                                       Nepoznato
-                                    </xsl:otherwise>
+                                    <xsl:otherwise>Ne postoje aktivnosti</xsl:otherwise>
                                   </xsl:choose>
                                 </td>
                             </tr>
