@@ -40,28 +40,48 @@
 
     <main>
       <h2>Pretraga crkvi</h2>
-      <form onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
+      <form action="pretraga.php" method="POST"onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
         <div class="center-text">
           <label for="naziv">Naziv crkve:</label>
 
           <input
             type="text"
-            id="naziv"
             placeholder="Zagrebačka katedrala"
-            name="naziv"
+            name="crkva_naziv"
           />
         </div>
+        <fieldset>
+          <legend>Misa</legend>
+
+          <label>Dan u tjednu: <input name="dan_u_tjednu" type="text"/></label><br/>
+          <label>Vrijeme: <input name="misa_vrijeme" type="time"/></label><br/>
+            <label>Ispovijedi
+            <label><input
+                type="checkbox"
+                value="prije mise"
+                name="ispovijed[]"
+              />prije mise</label
+            >
+            <label><input
+                type="checkbox"
+                value="poslije mise"
+                name="ispovijed[]"
+              />poslije mise</label
+            >
+            
+          
+        </fieldset>
         <div class="center-text">
-        <label for="kapacitet">Kapacitet</label>
+        <label>Kapacitet
           <input
             type="range"
-            id="kapacitet"
+            name="kapacitet"
             min="0"
             max="1000"
             step="50"
             value="50"
             onchange="kapacitet_promjena(value,kapacitet_span)"
-          /><span id="kapacitet_span"></span><br />
+          /><span id="kapacitet_span"></span></label><br />
           </div>
         <fieldset>
           <legend>Adresa</legend>
@@ -82,28 +102,36 @@
             placeholder="10000"
           /><br />
 
-          <label for="ulica">Ulica:</label>
+          <label for="ulica_naziv">Ulica:</label>
           <input
-            id="ulica"
-            name="ulica"
+            name="ulica_naziv"
             type="text"
             placeholder="Kaptol"
           /><br />
 
-          <label for="broj">Broj:</label>
+          <label for="ulica_broj">Broj:</label>
 
-          <input type="number" id="broj" min="1" name="broj" placeholder="31" />
+          <input type="number" min="1" name="ulica_broj" placeholder="31" />
         </fieldset>
 
+          
+
+          <fieldset>
+            <legend>Župnik</legend>
+            <label>Ime: <input type="text" name="župnik_ime" /></label><br/>
+            <label>Prezime: <input type="text" name="župnik_prezime" /></label>
+          </fieldset>
+        
+        
         <fieldset>
+         
           <legend>Župni ured</legend>
 
-          <label for="email">Adresa elektroničke pošte:</label>
+          <label for="žu_email">Adresa elektroničke pošte:</label>
 
           <input
             type="email"
-            name="email"
-            id="email"
+            name="žu_email"
             placeholder="katedrala.zagreb@crkve.hr"
           />
 
@@ -112,31 +140,28 @@
             <label>Tip:</label>
             <label for="mobilni"
               ><input
-                id="mobilni"
                 type="radio"
-                name="tip"
+                name="žu_telefon_tip"
                 value="mobilni"
               />mobilni</label
             >
             <label for="fiksni"
-              ><input
                 id="fiksni"
                 type="radio"
-                name="tip"
+                name="žu_telefon_tip"
                 value="fiksni"
               />fiksni</label
             >
             <label for="telefaks">
               <input
-                id="telefaks"
                 type="radio"
-                name="tip"
+                name="žu_telefon_tip"
                 value="telefaks"
               />telefaks</label
             ><br />
 
-            <label for="pozivni_broj">Pozivni broj mreže:</label>
-            <select name="peozivni_broj" id="pozivni_broj">
+            <label for="žu_pozivni_broj">Pozivni broj mreže:</label>
+            <select name="žu_pozivni_broj" id="žu_pozivni_broj">
               <option value="098">098</option>
               <option value="099">099</option>
               <option value="095">095</option>
@@ -144,16 +169,19 @@
               <option value="01" selected>01</option> </select
             ><br />
 
-            <label for="broj">Broj:</label>
-            <input type="tel" name="broj" placeholder="1231231" />
+            <label for="žu_tel_broj">Broj:</label>
+            <input type="tel" name="žu_tel_broj" placeholder="1231231" />
           </fieldset>
         </fieldset>
-
+        <fieldset>
+            <legend>Zbor</legend>
+            <label>Naziv: <input type="text" name="zbor_naziv"></label><br/>
+            <label>Broj članova: <input type="number" name="zbor_broj"></label>
+          </fieldset>
         <div class="center-text">
           <label for="godina_osnutka"> Godina osnutka:</label>
 
           <input
-            id="godina_osnutka"
             type="number"
             name="godina_osnutka"
             placeholder="2005"
@@ -163,7 +191,7 @@
 
         <div class="center-text">
           <label for="aktivnosti">Aktivnosti:</label>
-          <select name="aektivnosti" id="aktivnosti" multiple>
+          <select name="aktivnosti[]" id="aktivnosti" multiple>
             <option value="vjeronauk">vjeronauk</option>
             <option value="caritas">caritas</option>
             <option value="zaruke">zaruke</option>
@@ -171,26 +199,7 @@
           </select>
         </div>
 
-        <div class="center-text">
-          Ispovijedi:
-
-          <label for="prije_mise"
-            ><input
-              type="checkbox"
-              value="prije mise"
-              id="prije_mise"
-              name="ispovijed"
-            />prije mise</label
-          >
-          <label for="poslije_mise"
-            ><input
-              type="checkbox"
-              value="poslije mise"
-              id="poslije_mise"
-              name="ispovijed"
-            />poslije mise</label
-          >
-        </div>
+        
 
         <div id="obrazac-gumbi">
           <button class="info" type="reset">Očisti obrazac</button>
