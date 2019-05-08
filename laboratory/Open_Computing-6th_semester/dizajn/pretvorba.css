@@ -1,14 +1,14 @@
-#pretvorba-tablica thead{
+thead{
     background-color:var(--glavna-boja-tamna);
     color: white;
     font-size: 20px;
 }
 
-#pretvorba-tablica td,th {
+td,th {
     text-align: center;
     border: none;
 }
 
-#pretvorba-tablica table {
+table {
     border-collapse: collapse;
 }

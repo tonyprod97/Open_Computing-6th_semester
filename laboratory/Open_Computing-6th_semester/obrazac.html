@@ -40,7 +40,7 @@
 
     <main>
       <h2>Pretraga crkvi</h2>
-      <form action="pretraga.php" method="POST"onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
+      <form action="pretraga.php" method="GET" onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
         <div class="center-text">
           <label for="naziv">Naziv crkve:</label>
 
@@ -53,19 +53,29 @@
         <fieldset>
           <legend>Misa</legend>
 
-          <label>Dan u tjednu: <input name="dan_u_tjednu" type="text"/></label><br/>
+          <label>Dan u tjednu: 
+            <select name="dan_u_tjednu">
+              <option value="Ponedjeljak">Ponedjeljak</option>
+              <option value="Utorak">Utorak</option>
+              <option value="Srijeda">Srijeda</option>
+              <option value="Četvrtak">Četvrtak</option>
+              <option value="Petak">Petak</option>
+              <option value="Subota">Subota</option> 
+              <option value="Nedjelja" selected>Nedjelja</option> 
+            </select
+            ><br /></label><br/>
           <label>Vrijeme: <input name="misa_vrijeme" type="time"/></label><br/>
             <label>Ispovijedi
             <label><input
-                type="checkbox"
-                value="prije mise"
-                name="ispovijed[]"
+                type="radio"
+                value="Prije"
+                name="ispovijed"
               />prije mise</label
             >
             <label><input
-                type="checkbox"
-                value="poslije mise"
-                name="ispovijed[]"
+                type="radio"
+                value="Poslije"
+                name="ispovijed"
               />poslije mise</label
             >
             
@@ -77,7 +87,7 @@
             type="range"
             name="kapacitet"
             min="0"
-            max="1000"
+            max="20000"
             step="50"
             value="50"
             onchange="kapacitet_promjena(value,kapacitet_span)"
@@ -203,7 +213,7 @@
 
         <div id="obrazac-gumbi">
           <button class="info" type="reset">Očisti obrazac</button>
-          <button class="uspjeh" type="submit">Spremi</button>
+          <button class="uspjeh" type="submit">Pretraži</button>
         </div>
       </form>
     </main>

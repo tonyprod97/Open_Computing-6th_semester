@@ -42,7 +42,6 @@
     </nav>
                 <main>
                     <section>
-                      <xsl:attribute name="id">pretvorba-tablica</xsl:attribute>
                         <table>
                     <thead>
                         <th>Naziv</th>
