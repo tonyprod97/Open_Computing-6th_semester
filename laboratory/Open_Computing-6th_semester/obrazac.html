@@ -40,7 +40,7 @@
 
     <main>
       <h2>Pretraga crkvi</h2>
-      <form action="pretraga.php" method="GET" onsubmit="očisti_obrazac()" onreset="očisti_obrazac()">
+      <form action="pretraga.php" method="GET" onsubmit="očisti_obrazac()" onreset="očisti_obrazac()" novalidate>
         <div class="center-text">
           <label for="naziv">Naziv crkve:</label>
 
@@ -55,13 +55,14 @@
 
           <label>Dan u tjednu: 
             <select name="dan_u_tjednu">
+              <option value="" selected></option>
               <option value="Ponedjeljak">Ponedjeljak</option>
               <option value="Utorak">Utorak</option>
               <option value="Srijeda">Srijeda</option>
               <option value="Četvrtak">Četvrtak</option>
               <option value="Petak">Petak</option>
               <option value="Subota">Subota</option> 
-              <option value="Nedjelja" selected>Nedjelja</option> 
+              <option value="Nedjelja">Nedjelja</option> 
             </select
             ><br /></label><br/>
           <label>Vrijeme: <input name="misa_vrijeme" type="time"/></label><br/>
@@ -89,7 +90,7 @@
             min="0"
             max="20000"
             step="50"
-            value="50"
+            value="0"
             onchange="kapacitet_promjena(value,kapacitet_span)"
           /><span id="kapacitet_span"></span></label><br />
           </div>
@@ -120,7 +121,6 @@
           /><br />
 
           <label for="ulica_broj">Broj:</label>
-
           <input type="number" min="1" name="ulica_broj" placeholder="31" />
         </fieldset>
 
@@ -172,11 +172,12 @@
 
             <label for="žu_pozivni_broj">Pozivni broj mreže:</label>
             <select name="žu_pozivni_broj" id="žu_pozivni_broj">
+              <option value="" selected></option>
               <option value="098">098</option>
               <option value="099">099</option>
               <option value="095">095</option>
               <option value="092">092</option>
-              <option value="01" selected>01</option> </select
+              <option value="01">01</option> </select
             ><br />
 
             <label for="žu_tel_broj">Broj:</label>
@@ -189,7 +190,7 @@
             <label>Broj članova: <input type="number" name="zbor_broj"></label>
           </fieldset>
         <div class="center-text">
-          <label for="godina_osnutka"> Godina osnutka:</label>
+          <label for="godina_osnutka"> Najstarija godina osnutka:</label>
 
           <input
             type="number"
@@ -202,10 +203,10 @@
         <div class="center-text">
           <label for="aktivnosti">Aktivnosti:</label>
           <select name="aktivnosti[]" id="aktivnosti" multiple>
-            <option value="vjeronauk">vjeronauk</option>
-            <option value="caritas">caritas</option>
-            <option value="zaruke">zaruke</option>
-            <option value="ministriranje">ministriranje</option>
+            <option value="Vjeronauk">vjeronauk</option>
+            <option value="Caritas">caritas</option>
+            <option value="Zaruke">zaruke</option>
+            <option value="Ministriranje">ministriranje</option>
           </select>
         </div>
 
