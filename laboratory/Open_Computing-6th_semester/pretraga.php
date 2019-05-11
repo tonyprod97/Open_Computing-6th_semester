@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="hr">
 <?php
-error_reporting( E_ALL );
+#error_reporting( E_ALL ); // development purposes
+ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_WARNING);
+#error_reporting(0); // Disable all errors.
 include_once('funkcije.php');
 
 $dom = new DOMDocument();
@@ -9,10 +9,10 @@ $dom->load("podaci.xml");
 
 $xpath = new DOMXPath($dom);
 $upit = formiraj_query($_REQUEST);
-print $upit;
+#print $upit; // development purposes
 $rezultat = $xpath->query($upit);
-
 ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Hrvatske Crkve</title>
     <meta charset="UTF-8" />
