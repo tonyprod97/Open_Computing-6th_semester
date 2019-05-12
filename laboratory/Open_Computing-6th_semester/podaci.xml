@@ -183,4 +183,62 @@
     </misa>
     <god_osnutka>1500</god_osnutka>
 </crkva>
+<crkva kategorija="katolička">
+    <naziv>Svetoga križa Zagreb</naziv>
+    <župnik>
+        <ime>Marko</ime>
+        <prezime>Matelj</prezime>
+        <telefon tip="mobilni" br_mreze="0">12432453</telefon>
+    </župnik>
+    <župni_ured>
+        <mail>svKriža@biskupija.hr</mail>
+        <zu_telefon tip="fiksni" br_mreze="0">14821878</zu_telefon>
+    </župni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="21">Sv.Križa</ulica>
+    </adresa>
+    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Subota" ispovijed="Prije">
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <god_osnutka>1094</god_osnutka>
+    <max_kapacitet>1500</max_kapacitet>
+  <aktivnost naziv="Vjeronauk"/>
+  <aktivnost naziv="Zaruke"/>
+</crkva>
+<crkva kategorija="katolička">
+    <naziv>Crkva Bogdana Mandića</naziv>
+    <župnik>
+        <ime>Branimir</ime>
+        <prezime>Pan</prezime>
+        <telefon tip="mobilni" br_mreze="099">99912389</telefon>
+        <telefon tip="mobilni" br_mreze="0">12453453</telefon>
+    </župnik>
+    <župni_ured>
+        <zu_telefon tip="fiksni" br_mreze="0">14894878</zu_telefon>
+    </župni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="2">Dankovečka</ulica>
+    </adresa>
+    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Subota" ispovijed="Prije">
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <god_osnutka>1094</god_osnutka>
+    <max_kapacitet>1500</max_kapacitet>
+  <aktivnost naziv="Vjeronauk"/>
+  <aktivnost naziv="Caritas"/>
+</crkva>
 </podaci>

@@ -7,7 +7,7 @@ function formiraj_query($zahtjev) {
     if(!empty($crkva_naziv)) 
         $query[] = "./naziv[contains(translate(text(),
         'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'"
-        .strtolower($crkva_naziv)."')]";
+        .mb_strtolower($crkva_naziv)."')]";
     
     $dan_u_tjednu = $zahtjev['dan_u_tjednu'];
     $misa_vrijeme = $zahtjev['misa_vrijeme'];
@@ -32,9 +32,9 @@ function formiraj_query($zahtjev) {
             $adresa_upit = array();
             if(!empty($mjesto)) $adresa_upit[] = "./mjesto[contains(translate(text(),
             'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'"
-            .strtolower($mjesto)."')]";
+            .mb_strtolower($mjesto)."')]";
             if(!empty($pos_broj)) $adresa_upit[] = "./mjesto[@pos_broj='".$pos_broj."']";
-            if(!empty($ul_naziv)) $adresa_upit[] = "./ulica[contains(text(),'".strtolower($ul_naziv)."')]";
+            if(!empty($ul_naziv)) $adresa_upit[] = "./ulica[contains(text(),'".mb_strtolower($ul_naziv)."')]";
             if(!empty($ul_broj)) $adresa_upit[] = "./ulica[@kuc_broj='".$ul_broj."']";
             $query[] = "./adresa[".implode(" and ",$adresa_upit)."]";
         }
@@ -45,10 +45,10 @@ function formiraj_query($zahtjev) {
         $zupnik_upit = array();
         if(!empty($ime_zu)) $zupnik_upit[] = "./ime[contains(translate(text(),
         'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'"
-        .strtolower($ime_zu)."')]";
+        .mb_strtolower($ime_zu)."')]";
         if(!empty($prezime_zu)) $zupnik_upit[] = "./prezime[contains(translate(text(),
         'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'"
-        .strtolower($prezime_zu)."')]";  
+        .mb_strtolower($prezime_zu)."')]";  
         $query[] = "./župnik[".implode(" and ",$zupnik_upit)."]";
     }
 
@@ -61,7 +61,7 @@ function formiraj_query($zahtjev) {
             $ured = array();
             if(!empty($email_ured)) $ured[] = "./mail[contains(translate(text(),
             'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'"
-             .strtolower($email_ured)."')]";
+             .mb_strtolower($email_ured)."')]";
             if(!empty($tel_tip_ured)) $ured[] = "./zu_telefon[@tip='".$tel_tip_ured."']";
             if(!empty($poz_br_ured)) $ured[] = "./zu_telefon[@br_mreze='".$poz_br_ured."']";
             if(!empty($broj_tel)) $ured[] = "./zu_telefon[contains(text(),'".$broj_tel."')]";
@@ -73,7 +73,7 @@ function formiraj_query($zahtjev) {
         if(!empty($naziv_zbor) || !empty($broj_zbor)) {
             $zbor = array();
             if(!empty($naziv_zbor)) $zbor[] = "./zbor_naziv[contains(translate(text(),
-            'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'".strtolower($naziv_zbor)."')]";
+            'ABCDEFGHIJKLMNOPURSTUWXYZŠĐČĆŽ','abcdefghijklmnopurstuwxyzšđčćž'),'".mb_strtolower($naziv_zbor)."')]";
             if(!empty($broj_zbor)) $zbor[] = "./broj/text()<=".$broj_zbor;
             $query[] = "./zbor[".implode(" and ",$zbor)."]";
         }
