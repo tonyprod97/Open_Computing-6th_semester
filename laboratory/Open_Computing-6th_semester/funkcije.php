@@ -1,5 +1,6 @@
 <?php
-
+$wikimedia = 'https://hr.wikipedia.org/api/rest_v1/page/summary/';
+$wikiaction = 'https://hr.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles={titles}&format=json';
 function formiraj_query($zahtjev) {
     $query = array();
 
@@ -91,5 +92,43 @@ function formiraj_query($zahtjev) {
     }
     if(count($query)) return "//crkva[".implode(" and ",$query)."]";
     else return "//crkva";
+}
+
+function dohvat_wikimedia($naziv,$naziv_eng) {
+    $url = $GLOBALS['wikimedia'].$naziv;
+    $json_data = file_get_contents($url);
+    $data = json_decode($json_data, true);
+    $slika = '<img class="tablica-slika" src="'.$data['thumbnail']['source'].'"/>';
+    $sažetak= $data['extract_html'];
+    $koordinate = $data['coordinates'];
+    if(empty($koordinate) && !empty($naziv_eng)) {
+        $url = str_replace('hr','en',$GLOBALS['wikimedia']);
+        $url.= $naziv_eng;
+        $json_data = file_get_contents($url);
+        $data = json_decode($json_data, true);    
+        $koordinate = '<p> širina '.round($data['coordinates']['lat'],2).' - duljina '.round($data['coordinates']['lon'],2).'</p>';
+    }else {
+        $koordinate = null;
+    }
+    
+    return array($slika,$sažetak, $koordinate);
+}
+
+function dohvati_wikiaction($naziv) {
+    $url = str_replace('{titles}',$naziv,$GLOBALS['wikiaction']);
+    $json_data = file_get_contents($url);
+    $data = json_decode($json_data, true);
+    $adresa = reset($data['query']['pages'])['revisions'][0]['*'];  
+    preg_match('/.*lokacija\s+=\s*(.*)\[\[(\w*)\]\],\s*\[\[(\w*)\]\].*/',$adresa,$rezultat);
+    #print_r($rezultat);
+    return $rezultat[1].' '.$rezultat[2].' '.$rezultat[3];
+}
+
+function dohvati_nom($naziv) {
+    #$raw = file_get_contents('https://nominatim.openstreetmap.org/search?q=Trg%20Nikole%20%C5%A0ubi%C4%87a%20Zrinskog,%20Zagreb,%20Croatia&format=xml');
+    $data = simplexml_load_file('http://nominatim.openstreetmap.org/search.php?q=unska+3%2C+zagreb%2C+croatia&format=xml');
+    print_r($data);
+
+    echo 'tu sam';
 }
 ?>

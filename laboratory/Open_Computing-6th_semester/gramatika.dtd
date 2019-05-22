@@ -2,8 +2,10 @@
 <!ELEMENT podaci (crkva+)>
 <!ELEMENT crkva (naziv,župnik,župni_ured,adresa,misa+,god_osnutka?,max_kapacitet?,aktivnost*,zbor?)>
 <!ATTLIST crkva kategorija (katolička|pravoslavna|protestantska) #REQUIRED>
+<!ATTLIST crkva id ID #REQUIRED>
 <!-- naziv -->
 <!ELEMENT naziv (#PCDATA)>
+<!ATTLIST naziv eng CDATA #IMPLIED>
 <!--župnik-->
 <!ELEMENT župnik (ime,prezime,telefon*)>
 <!ELEMENT ime (#PCDATA)>

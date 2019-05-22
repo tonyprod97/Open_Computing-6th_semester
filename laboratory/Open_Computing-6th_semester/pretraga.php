@@ -1,6 +1,6 @@
 <?php
-#error_reporting( E_ALL ); // development purposes
-ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_WARNING);
+error_reporting( E_ALL ); // development purposes
+#ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_WARNING);
 #error_reporting(0); // Disable all errors.
 include_once('funkcije.php');
 
@@ -60,22 +60,24 @@ $rezultat = $xpath->query($upit);
                     <th>Naziv</th>
                     <th>Raspored Misa</th>
                     <th>Župnik</th>
-                    <th>Mjesto</th>
-                    <th>Kapacitet</th>
+                    <th>Adresa</th>
                     <th>Aktivnosti</th>
+                    <th>Sažetak</th>
                 </thead>
                 <tbody>
                     <?php
                     foreach($rezultat as $crkva) {
-                        echo "<tr><td>";
-                        echo $crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</td>";
-                        
+                        $naziv = $crkva->getAttribute('id');
+                        list($slika,$sažetak,$koordinate) = dohvat_wikimedia($naziv,$crkva->getElementsByTagName('naziv')->item(0)->getAttribute('eng'));
+                        echo '<tr><td>';
+                        echo $slika;
+                        echo "<p>".$crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</br>".$koordinate."</p></td>";
                         echo "<td>";
                         foreach($crkva->getElementsByTagName('misa') as $misa){
                             echo $misa->getAttribute('dan_u_tjednu').", ".$misa->childNodes[1]->nodeValue."h<br/>";
                         }
                         echo "</td>";
-
+                        
                         echo "<td>";
                         $zupnik = $crkva->getElementsByTagName('župnik')->item(0);
                         echo $zupnik->getElementsByTagName('ime')->item(0)->nodeValue.' '.$zupnik->getElementsByTagName('prezime')->item(0)->nodeValue."<br/>Kontakt: ";
@@ -85,17 +87,8 @@ $rezultat = $xpath->query($upit);
                         
                         echo "</td>";
 
-                        $mjesto = $crkva->getElementsByTagName('mjesto')->item(0);
-                        echo "<td>".$mjesto->getAttribute('pos_broj').', '.$mjesto->nodeValue.'</td>';
-
-                        echo "<td>";
-                        $kapacitet = $crkva->getElementsByTagName('max_kapacitet')->item(0);
-                        if($kapacitet) $kapacitet = $kapacitet->nodeValue;
-                        if( $kapacitet ) {
-                            if( $kapacitet < 100 ) echo "Do 100";
-                            else echo "Maksimalno ".$kapacitet;
-                        } else echo "Nepoznato";
-                        echo "</td>";
+                        $adresa = dohvati_wikiaction($naziv);
+                        echo "<td>".$adresa.'</br>'.dohvati_nom('x').'</td>';
 
                         echo "<td>";
                         $aktivnosti = $crkva->getElementsByTagName('aktivnost');
@@ -105,6 +98,7 @@ $rezultat = $xpath->query($upit);
                             }
                         } else echo "Ne postoje aktivnosti";
                         echo "</td>";
+                        echo '<td class="sažetak"><div class="sažetak">'.$sažetak."</div></td>";
                         
                         echo "</tr>";
                     }

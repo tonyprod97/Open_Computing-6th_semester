@@ -3,8 +3,8 @@
 <?xml-stylesheet type="text/xsl" href="./pretvorba.xsl"?>
 <podaci>
     
-<crkva kategorija="katolička">
-    <naziv>Zagrebačka katedrala</naziv>
+<crkva kategorija="katolička" id="Zagrebačka_katedrala">
+    <naziv eng="Zagreb_Cathedral">Zagrebačka katedrala</naziv>
     <župnik>
         <ime>Ivan</ime>
         <prezime>Ivanić</prezime>
@@ -36,8 +36,8 @@
         <zbor_naziv>Slavuji Katedrale Zagreb</zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička">
-    <naziv>Dubrovačka katedrala</naziv>
+<crkva kategorija="katolička" id="Dubrovačka_katedrala">
+    <naziv eng="Dubrovnik_Cathedral" >Dubrovačka katedrala</naziv>
     <župnik>
         <ime>Vlaho</ime>
         <prezime>Katušić</prezime>
@@ -71,9 +71,8 @@
             </zbor_naziv>
     </zbor>
 </crkva>
-<crkva kategorija="katolička" >
-       <!-- naziv je jednak naslovu na wiki-->
-    <naziv>Katedrala Svetog Vida u Rijeci</naziv>
+<crkva kategorija="katolička" id="Katedrala_sv._Vida_u_Rijeci">
+    <naziv eng="Rijeka_Cathedral">Katedrala Svetog Vida u Rijeci</naziv>
     <župnik>
         <ime>Mihovil</ime>
         <prezime>Radić</prezime>
@@ -106,9 +105,8 @@
             <broj>27</broj>
     </zbor>
 </crkva>
-<crkva kategorija="pravoslavna">
-  <!-- naziv je jednak naslovu na wiki-->
-  <naziv>Saborna crkva Preobraženja Gospodnjeg u Zagrebu</naziv>
+<crkva kategorija="pravoslavna" id="Saborna_crkva_Preobraženja_Gospodnjeg_u_Zagrebu">
+  <naziv eng="Serbian_Orthodox_Cathedral,_Zagreb">Saborna crkva Preobraženja Gospodnjeg u Zagrebu</naziv>
     <župnik>
         <ime>Bogdan</ime>
         <prezime>Malik</prezime>
@@ -132,7 +130,7 @@
     <god_osnutka>1866</god_osnutka>
     <max_kapacitet>70</max_kapacitet>
 </crkva>
-<crkva kategorija="pravoslavna">
+<crkva kategorija="pravoslavna" id="Pravoslavna_crkva_sv._Trojice_u_Bjelovaru">
      <!-- naziv je jednak naslovu na wiki-->
     <naziv>Pravoslavna crkva sv. Trojice u Bjelovaru</naziv>
     <župnik>
@@ -157,7 +155,7 @@
     <max_kapacitet>150</max_kapacitet>
   <aktivnost naziv="Caritas"/>
 </crkva>
-<crkva kategorija="katolička">
+<crkva kategorija="katolička" id="Crkva_Betlehem_na_Marjanu">
     <naziv>crkva Gospe od Betlema</naziv>
     <župnik>
         <ime>Marko</ime>
@@ -182,63 +180,5 @@
         <vrijeme>18:00</vrijeme>
     </misa>
     <god_osnutka>1500</god_osnutka>
-</crkva>
-<crkva kategorija="katolička">
-    <naziv>Svetoga križa Zagreb</naziv>
-    <župnik>
-        <ime>Marko</ime>
-        <prezime>Matelj</prezime>
-        <telefon tip="mobilni" br_mreze="0">12432453</telefon>
-    </župnik>
-    <župni_ured>
-        <mail>svKriža@biskupija.hr</mail>
-        <zu_telefon tip="fiksni" br_mreze="0">14821878</zu_telefon>
-    </župni_ured>
-    <adresa>
-        <mjesto pos_broj="10000">Zagreb</mjesto>
-        <ulica kuc_broj="21">Sv.Križa</ulica>
-    </adresa>
-    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
-        <vrijeme>08:00</vrijeme>
-    </misa>
-    <misa dan_u_tjednu="Subota" ispovijed="Prije">
-        <vrijeme>18:00</vrijeme>
-    </misa>
-    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
-        <vrijeme>11:00</vrijeme>
-    </misa>
-    <god_osnutka>1094</god_osnutka>
-    <max_kapacitet>1500</max_kapacitet>
-  <aktivnost naziv="Vjeronauk"/>
-  <aktivnost naziv="Zaruke"/>
-</crkva>
-<crkva kategorija="katolička">
-    <naziv>Crkva Bogdana Mandića</naziv>
-    <župnik>
-        <ime>Branimir</ime>
-        <prezime>Pan</prezime>
-        <telefon tip="mobilni" br_mreze="099">99912389</telefon>
-        <telefon tip="mobilni" br_mreze="0">12453453</telefon>
-    </župnik>
-    <župni_ured>
-        <zu_telefon tip="fiksni" br_mreze="0">14894878</zu_telefon>
-    </župni_ured>
-    <adresa>
-        <mjesto pos_broj="10000">Zagreb</mjesto>
-        <ulica kuc_broj="2">Dankovečka</ulica>
-    </adresa>
-    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
-        <vrijeme>08:00</vrijeme>
-    </misa>
-    <misa dan_u_tjednu="Subota" ispovijed="Prije">
-        <vrijeme>18:00</vrijeme>
-    </misa>
-    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
-        <vrijeme>11:00</vrijeme>
-    </misa>
-    <god_osnutka>1094</god_osnutka>
-    <max_kapacitet>1500</max_kapacitet>
-  <aktivnost naziv="Vjeronauk"/>
-  <aktivnost naziv="Caritas"/>
 </crkva>
 </podaci>
