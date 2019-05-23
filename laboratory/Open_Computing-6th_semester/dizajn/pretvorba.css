@@ -28,11 +28,14 @@ div.sažetak {
     overflow-y: auto;
 }
 
-td.sažetak {
-    width: 200px;
-    height: 135px;
+td img{
+    float: left;
 }
 
-td {
-    width: 16%
+td.slika{
+    width: 120px;
+}
+td.sažetak {
+    width: 400px;
+    height: 135px;
 }

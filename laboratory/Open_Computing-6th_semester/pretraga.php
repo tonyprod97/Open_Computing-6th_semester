@@ -1,7 +1,7 @@
 <?php
-error_reporting( E_ALL ); // development purposes
+#error_reporting( E_ALL ); // development purposes
 #ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_WARNING);
-#error_reporting(0); // Disable all errors.
+error_reporting(0); // Disable all errors.
 include_once('funkcije.php');
 
 $dom = new DOMDocument();
@@ -57,6 +57,7 @@ $rezultat = $xpath->query($upit);
         <section>
             <table>
                 <thead>
+                    <th></th>
                     <th>Naziv</th>
                     <th>Raspored Misa</th>
                     <th>Župnik</th>
@@ -69,9 +70,10 @@ $rezultat = $xpath->query($upit);
                     foreach($rezultat as $crkva) {
                         $naziv = $crkva->getAttribute('id');
                         list($slika,$sažetak,$koordinate) = dohvat_wikimedia($naziv,$crkva->getElementsByTagName('naziv')->item(0)->getAttribute('eng'));
-                        echo '<tr><td>';
-                        echo $slika;
-                        echo "<p>".$crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</br>".$koordinate."</p></td>";
+                        echo '<tr><td class="slika">';
+                        echo $slika.'</td>';
+
+                        echo "<td><p>".$crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</br>".$koordinate."</p></td>";
                         echo "<td>";
                         foreach($crkva->getElementsByTagName('misa') as $misa){
                             echo $misa->getAttribute('dan_u_tjednu').", ".$misa->childNodes[1]->nodeValue."h<br/>";
@@ -84,11 +86,10 @@ $rezultat = $xpath->query($upit);
                         foreach($zupnik->getElementsByTagName('telefon') as $tel){
                             echo $tel->nodeValue."<br/>";
                         }
-                        
                         echo "</td>";
 
                         $adresa = dohvati_wikiaction($naziv);
-                        echo "<td>".$adresa.'</br>'.dohvati_nom('x').'</td>';
+                        echo "<td>".dohvati_nom($adresa).'</td>';
 
                         echo "<td>";
                         $aktivnosti = $crkva->getElementsByTagName('aktivnost');
@@ -98,8 +99,8 @@ $rezultat = $xpath->query($upit);
                             }
                         } else echo "Ne postoje aktivnosti";
                         echo "</td>";
+
                         echo '<td class="sažetak"><div class="sažetak">'.$sažetak."</div></td>";
-                        
                         echo "</tr>";
                     }
                     ?>
