@@ -127,8 +127,8 @@ function dohvati_wikiaction($naziv)
     $data = json_decode($json_data, true);
     $adresa = reset($data['query']['pages'])['revisions'][0]['*'];
     preg_match('/.*lokacija\s+=\s*(.*)\[\[(\w*)\]\],\s*\[\[(\w*)\]\].*/', $adresa, $rezultat);
-    #print_r($rezultat);
-    return $rezultat[1] . ' ' . $rezultat[2] . ' ' . $rezultat[3];
+    
+    return strip_tags($rezultat[1]) . ' ' . $rezultat[2] . ' ' . $rezultat[3];
 }
 
 function dohvati_nom($adresa)

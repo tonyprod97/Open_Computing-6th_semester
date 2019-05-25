@@ -2,7 +2,39 @@
 <!DOCTYPE podaci SYSTEM "./gramatika.dtd">
 <?xml-stylesheet type="text/xsl" href="./pretvorba.xsl"?>
 <podaci>
-    
+<crkva kategorija="katolička" id="Crkva_sv._Blaža_u_Zagrebu">
+    <naziv eng="Church_of_Saint_Blaise,_Zagreb">Crkva sv. Blaža u Zagrebu</naziv>
+    <župnik>
+        <ime>Marko</ime>
+        <prezime>Petrović</prezime>
+        <telefon tip="mobilni" br_mreze="099">9998989</telefon>
+        <telefon tip="mobilni" br_mreze="0">12453453</telefon>
+    </župnik>
+    <župni_ured>
+        <mail>svBlaz@zg-nadbiskupija.hr</mail>
+        <zu_telefon tip="fiksni" br_mreze="0">14877878</zu_telefon>
+    </župni_ured>
+    <adresa>
+        <mjesto pos_broj="10000">Zagreb</mjesto>
+        <ulica kuc_broj="64">Prilaz Gjure Deželića</ulica>
+    </adresa>
+    <misa dan_u_tjednu="Ponedjeljak" ispovijed="Prije">
+        <vrijeme>08:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Subota" ispovijed="Prije">
+        <vrijeme>18:00</vrijeme>
+    </misa>
+    <misa dan_u_tjednu="Nedjelja" ispovijed="Prije">
+        <vrijeme>11:00</vrijeme>
+    </misa>
+    <god_osnutka>1094</god_osnutka>
+    <max_kapacitet>1500</max_kapacitet>
+  <aktivnost naziv="Vjeronauk"/>
+  <aktivnost naziv="Zaruke"/>
+    <zbor>
+        <zbor_naziv>Blaž Zagreb</zbor_naziv>
+    </zbor>
+</crkva>
 <crkva kategorija="katolička" id="Zagrebačka_katedrala">
     <naziv eng="Zagreb_Cathedral">Zagrebačka katedrala</naziv>
     <župnik>
