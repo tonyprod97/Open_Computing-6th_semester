@@ -1,11 +1,8 @@
 <?php
-$wikimedia = 'https://hr.wikipedia.org/api/rest_v1/page/summary/';
-$wikiaction = 'https://hr.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles={titles}&format=json';
 error_reporting(0);
 
 $id_crkve = $_REQUEST['id'];
 $id_crkve_eng = $_REQUEST['eng'];
-
 
 sleep(2);
 $dom = new DOMDocument();
@@ -57,36 +54,5 @@ $htmlTemplate .= "</ul>";
 
 $htmlTemplate .= "</div>";
 
-$koordinate_wikimedia = wikimedia_koordinate($id_crkve,$id_crkve_eng);
-$koordinate_wikiaction = wikiaction_koordinate($id_crkve);
-
-#echo json_encode(array($htmlTemplate,$koordinate_wikimedia));
 echo $htmlTemplate;
-function wikimedia_koordinate($id_crkve, $id_crkve_eng)
-{
-
-    $url = $GLOBALS['wikimedia'] . $id_crkve;
-    $json_data = file_get_contents($url);
-    $data = json_decode($json_data, true);
-
-    $koordinate = $data['coordinates'];
-    if (empty($koordinate) && !empty($id_crkve_eng)) {
-        $url = str_replace('hr', 'en', $GLOBALS['wikimedia']);
-        $url .= $id_crkve_eng;
-        $json_data = file_get_contents($url);
-        $data = json_decode($json_data, true);
-        $koordinate = array($data['coordinates']['lat'], $data['coordinates']['lon']);
-    } else {
-        $koordinate = null;
-    }
-    #var_dump($koordinate);
-    return $koordinate;
-}
-function wikiaction_koordinate($naziv) {
-    $url = str_replace('{titles}', $naziv, $GLOBALS['wikiaction']);
-    $json_data = file_get_contents($url);
-    $data = json_decode($json_data, true);
-    $adresa = reset($data['query']['pages'])['revisions'][0]['*'];
-    var_dump($data);
-}
 ?>
