@@ -9,7 +9,6 @@ $dom->load("podaci.xml");
 
 $xpath = new DOMXPath($dom);
 $upit = formiraj_query($_REQUEST);
-#print $upit; // development purposes
 $rezultat = $xpath->query($upit);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +17,7 @@ $rezultat = $xpath->query($upit);
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./dizajn.css">
     <link rel="stylesheet" type="text/css" href="./dizajn/pretvorba.css" />
+    <script src="./skripte/detalji.js"></script>
 </head>
 
 <body>
@@ -51,6 +51,7 @@ $rezultat = $xpath->query($upit);
                 <a href="mailto:antonio.kamber@fer.hr">Email</a>
             </li>
         </ul>
+        <div id="detalji"></div>
     </nav>
 
     <main>
@@ -60,10 +61,9 @@ $rezultat = $xpath->query($upit);
                     <th></th>
                     <th>Naziv</th>
                     <th>Raspored Misa</th>
-                    <th>Župnik</th>
                     <th>Adresa</th>
                     <th>Aktivnosti</th>
-                    <th>Sažetak</th>
+                    <th></th>
                 </thead>
                 <tbody>
                     <?php
@@ -79,14 +79,6 @@ $rezultat = $xpath->query($upit);
                             echo $misa->getAttribute('dan_u_tjednu').", ".$misa->childNodes[1]->nodeValue."h<br/>";
                         }
                         echo "</td>";
-                        
-                        echo "<td>";
-                        $zupnik = $crkva->getElementsByTagName('župnik')->item(0);
-                        echo $zupnik->getElementsByTagName('ime')->item(0)->nodeValue.' '.$zupnik->getElementsByTagName('prezime')->item(0)->nodeValue."<br/>Kontakt: ";
-                        foreach($zupnik->getElementsByTagName('telefon') as $tel){
-                            echo $tel->nodeValue."<br/>";
-                        }
-                        echo "</td>";
 
                         $adresa = dohvati_wikiaction($naziv);
                         echo "<td>".dohvati_nom($adresa).'</td>';
@@ -99,9 +91,7 @@ $rezultat = $xpath->query($upit);
                             }
                         } else echo "Ne postoje aktivnosti";
                         echo "</td>";
-
-                        echo '<td class="sažetak"><div class="sažetak">'.$sažetak."</div></td>";
-                        echo "</tr>";
+                        echo '<td><a id="'.$naziv.'" onclick="handleDetails(\''.$naziv.'\')" class="detalji">Detalji</a></td>';
                     }
                     ?>
                 </tbody>
