@@ -17,7 +17,14 @@ $rezultat = $xpath->query($upit);
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="./dizajn.css">
     <link rel="stylesheet" type="text/css" href="./dizajn/pretvorba.css" />
+    <link rel="stylesheet" type="text/css" href="./dizajn/detalji.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
     <script src="./skripte/detalji.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
 </head>
 
 <body>
@@ -31,7 +38,7 @@ $rezultat = $xpath->query($upit);
     </header>
 
     <nav>
-        <ul>
+        <ul class="nav">
             <li>
                 <a href="./index.html">Početna</a>
             </li>
@@ -91,12 +98,17 @@ $rezultat = $xpath->query($upit);
                             }
                         } else echo "Ne postoje aktivnosti";
                         echo "</td>";
-                        echo '<td><a id="'.$naziv.'" onclick="handleDetails(\''.$naziv.'\')" class="detalji">Detalji</a></td>';
+                        $naziv_eng = $crkva->getElementsByTagName('naziv')->item(0)->getAttribute('eng');
+                        $naziv_crkve = $crkva->getElementsByTagName('naziv')->item(0)->nodeValue;
+                        echo '<td><a id="'.$naziv.'" onclick="handleDetails(\''.$naziv.'\',\''.$naziv_eng.'\',\''.$naziv_crkve.'\')" class="detalji">Detalji</a></td>';
                     }
                     ?>
                 </tbody>
             </table>
 
+        </section>
+        <section id="map_container">
+        <div id="mapid"></div>
         </section>
     </main>
     <footer>

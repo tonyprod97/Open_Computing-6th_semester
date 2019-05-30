@@ -39,10 +39,3 @@ td.sažetak {
     width: 400px;
     height: 135px;
 }
-
-td a {
-    cursor: pointer;
-}
-td a:hover {
-    text-decoration: underline;
-}

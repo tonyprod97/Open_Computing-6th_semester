@@ -1,0 +1,44 @@
+.detalji_prikaz {
+    overflow-y: auto;
+    margin-top: 25px;
+    margin: 10px;
+    color: var(--sekundarna-boja);
+    background-color: var(--glavna-boja);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.detalji_prikaz .naslov {
+    padding: 20px;
+}
+
+.detalji_prikaz .list {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+ul {
+    margin: 0px;
+}
+
+.detalji_prikaz .naslovni_tekst {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+td a {
+    cursor: pointer;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    overflow-y: auto;
+}
+
+#mapid {
+    height: 400px;
+    width: 600px;
+}

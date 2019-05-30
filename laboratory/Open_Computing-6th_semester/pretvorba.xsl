@@ -19,7 +19,7 @@
     </header>
 
     <nav>
-      <ul>
+      <ul class="nav">
         <li>
           <a href="./index.html">Početna</a>
         </li>

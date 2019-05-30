@@ -90,13 +90,13 @@ main article {
 
 }
 
-nav ul {
+nav ul.nav {
     list-style: none;
     margin-top: 40px;
     padding-left: 0px;
 }
 
-nav li {
+nav ul.nav li {
     padding-left: 10px;
     padding-top: 10px;
     height: 30px;
@@ -111,19 +111,19 @@ nav li {
     border-color: var(--glavna-boja-tamna)
 }
 
-nav li:hover {
+nav ul.nav li:hover {
     background-image:
         linear-gradient(to right,
         var(--glavna-boja-svijetla),
         var(--glavna-boja-tamna));
 }
 
-nav a {
+nav ul.nav a {
     text-decoration: none;
     color: var(--glavna-boja-tekst);
 }
 
-nav a:hover {
+nav ul.nav a:hover {
     text-decoration: underline;
 }
 
