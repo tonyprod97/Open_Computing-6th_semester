@@ -60,7 +60,7 @@ function wikimediaDohvat(){
                 if (req.status == 200) {
                     var data = JSON.parse(req.responseText)
                     //kooridnateWikimedia = [data['coordinates']['lat'],data['coordinates']['lon']];
-                    //wikiActionDohvat()
+                    wikiActionDohvat()
                     setMap(data['coordinates']['lat'],data['coordinates']['lon'])
                 } else setMap()
             }
@@ -77,7 +77,7 @@ function wikiActionDohvat(){
             if (req.readyState == 4) {
                 if (req.status == 200) {
                     var data = JSON.parse(req.responseText)
-                    console.log(data)
+                    console.log('Wiki action data:',data)
                     //setMap(data['coordinates']['lat'],data['coordinates']['lon'])
                 } else alert('Failed')
             }

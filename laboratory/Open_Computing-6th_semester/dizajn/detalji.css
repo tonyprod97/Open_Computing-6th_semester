@@ -36,6 +36,9 @@ td a:hover {
 
 nav {
     overflow-y: auto;
+    bottom: 0px;
+    top:70px;
+    height: auto;
 }
 
 #mapid {
