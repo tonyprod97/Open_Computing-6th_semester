@@ -23,7 +23,6 @@ var coordinatesWikimedia;
 var idEng;
 var id;
 var wikimedia = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
-var wikiaction = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles={titles}&format=json';
 
 var handleDetails = (crkvaId,crkvaEngId,crkvaNaziv) => {
     naziv = crkvaNaziv
@@ -59,9 +58,8 @@ function wikimediaDohvat(){
             if (req.readyState == 4) {
                 if (req.status == 200) {
                     var data = JSON.parse(req.responseText)
-                    //kooridnateWikimedia = [data['coordinates']['lat'],data['coordinates']['lon']];
+                    coordinatesWikimedia = [data['coordinates']['lat'],data['coordinates']['lon']];
                     wikiActionDohvat()
-                    setMap(data['coordinates']['lat'],data['coordinates']['lon'])
                 } else setMap()
             }
         };
@@ -78,16 +76,17 @@ function wikiActionDohvat(){
                 if (req.status == 200) {
                     var data = JSON.parse(req.responseText)
                     console.log('Wiki action data:',data)
-                    //setMap(data['coordinates']['lat'],data['coordinates']['lon'])
+                    coordinatesWikiaction = [+data['širina'],+data['duljina']]
+                    setMap()
                 } else alert('Failed')
             }
         }
-    req.open("GET", wikiaction.replace("{titles}",idEng), true);
-    req.setRequestHeader('Access-Control-Allow-Origin','*')
+    req.open("GET", 'detalji.php?action=wikiAction&title='+id, true);
     req.send(null); 
     }
 }
-function setMap(lat,lon) {
+function setMap() {
+    console.log(coordinatesWikiaction,coordinatesWikimedia)
     if(map != undefined || map != null){
         var container = document.getElementById('map_container')
         container.removeChild(map)
@@ -95,19 +94,31 @@ function setMap(lat,lon) {
         div.id = 'mapid'
         container.appendChild(div)
     }
-    if(lat && lon) {
-        var mymap = L.map('mapid').setView([lat, lon], 17)
+    if(coordinatesWikiaction[0] && coordinatesWikimedia[0]) {
+        var mymap = L.map('mapid').setView(coordinatesWikiaction, 17)
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
         { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' })
         .addTo(mymap)
-        var marker = L.marker([lat, lon]).addTo(mymap)
-        /*
-        var polyline = L.polyline([[45.80, 15.97],[45.81, 15.97]], {
+        var polyline = L.polyline([coordinatesWikiaction,coordinatesWikimedia], {
             color: 'red'
             }).addTo(mymap);
-        mymap.fitBounds(polyline.getBounds());*/
-        marker.bindPopup(`<b>${naziv}</b><br/>širina: ${lat.toFixed(2)}<br/>duljina: ${lon.toFixed(2)}`).openPopup()
-    } else {
+        var markerAction = L.marker(coordinatesWikiaction).addTo(mymap)
+        var markerMedia = L.marker(coordinatesWikimedia).addTo(mymap)
+        
+        markerAction.bindPopup(`<b>${naziv} - wiki Action</b><br/>širina: ${coordinatesWikiaction[0].toFixed(2)}<br/>duljina: ${coordinatesWikiaction[1].toFixed(2)}`).openPopup()
+        markerMedia.bindPopup(`<b>${naziv} - wiki Media</b><br/>širina: ${coordinatesWikimedia[0].toFixed(2)}<br/>duljina: ${coordinatesWikimedia[1].toFixed(2)}`).openPopup()
+    
+        mymap.fitBounds(polyline.getBounds());
+    } else if(coordinatesWikimedia[0]) {
+        var [širina,duljina] = coordinatesWikimedia
+        var mymap = L.map('mapid').setView([širina, duljina], 17)
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+        { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' })
+        .addTo(mymap)
+        var marker = L.marker([širina, duljina]).addTo(mymap)
+        marker.bindPopup(`<b>${naziv}</b><br/>širina: ${širina.toFixed(2)}<br/>duljina: ${duljina.toFixed(2)}`).openPopup()
+    }
+    else {
         document.getElementById('mapid').innerText = 'Koodrinate nisu poznate, prikaz karte nije dostupan.'
     }
 }
