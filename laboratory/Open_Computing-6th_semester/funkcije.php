@@ -138,8 +138,8 @@ function dohvati_nom($adresa)
     $koordinate = $xml->place[0];
     $data = $adresa;
     #echo $url;
-    if(isset($koordinate['lon']) && isset($koordinate['lat'])) {
-        $data.='</br>širina '.round($koordinate['lat'],2).' duljina '.round($koordinate['lon'],2);
-    }
+    #if(isset($koordinate['lon']) && isset($koordinate['lat'])) {
+    #    $data.='</br>širina '.round($koordinate['lat'],2).' duljina '.round($koordinate['lon'],2);
+    #}
     return $data;
 }

@@ -21,7 +21,6 @@ $rezultat = $xpath->query($upit);
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
-    <script src="./skripte/detalji.js"></script>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
@@ -76,11 +75,11 @@ $rezultat = $xpath->query($upit);
                     <?php
                     foreach($rezultat as $crkva) {
                         $naziv = $crkva->getAttribute('id');
-                        list($slika,$sažetak,$koordinate) = dohvat_wikimedia($naziv,$crkva->getElementsByTagName('naziv')->item(0)->getAttribute('eng'));
+                        list($slika,$sažetak) = dohvat_wikimedia($naziv,$crkva->getElementsByTagName('naziv')->item(0)->getAttribute('eng'));
                         echo '<tr><td class="slika">';
                         echo $slika.'</td>';
 
-                        echo "<td><p>".$crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</br>".$koordinate."</p></td>";
+                        echo "<td><p>".$crkva->getElementsByTagName('naziv')->item(0)->nodeValue."</td>";
                         echo "<td>";
                         foreach($crkva->getElementsByTagName('misa') as $misa){
                             echo $misa->getAttribute('dan_u_tjednu').", ".$misa->childNodes[1]->nodeValue."h<br/>";
@@ -115,5 +114,6 @@ $rezultat = $xpath->query($upit);
         Autor: Antonio Kamber
     </footer>
 </body>
+<script src="./skripte/detalji.js"></script>
 
 </html>

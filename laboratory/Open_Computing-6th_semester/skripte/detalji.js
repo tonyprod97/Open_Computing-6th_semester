@@ -1,18 +1,18 @@
-window.addEventListener('load', () => {
-    var rows = document.querySelectorAll('tbody tr')
-    rows.forEach(r => {
-        var rowColor = r.style.backgroundColor
-        var fontColor = r.style.color
-        r.addEventListener('mouseover', () => {
-            r.style.backgroundColor = '#6d6d6d'
-            r.style.color = 'white'
-        })
-        r.addEventListener('mouseout', () => {
-            r.style.backgroundColor = rowColor
-            r.style.color = fontColor
-        })
+
+var rows = document.querySelectorAll('tbody tr')
+rows.forEach(r => {
+    var rowColor = r.style.backgroundColor
+    var fontColor = r.style.color
+    r.addEventListener('mouseover', () => {
+        r.style.backgroundColor = '#6d6d6d'
+        r.style.color = 'white'
+    })
+    r.addEventListener('mouseout', () => {
+        r.style.backgroundColor = rowColor
+        r.style.color = fontColor
     })
 })
+
 
 var req;
 var detailElement;
